@@ -22,7 +22,7 @@
 
 -(void)setUpCollection{
     self.dataMArr = [NSMutableArray array];
-    for(NSInteger index = 0;index<9; index++){
+    for(NSInteger index = 0;index<29; index++){
         UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)index+1]];
         NSString *title = [NSString stringWithFormat:@"{0,%ld}",(long)index+1];
         NSDictionary *dic = @{@"image": image, @"title":title};
