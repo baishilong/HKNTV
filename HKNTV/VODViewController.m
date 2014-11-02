@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 ZhiYou. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "VODViewController.h"
 
-@interface SecondViewController ()
+@interface VODViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation VODViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
