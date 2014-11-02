@@ -4,7 +4,7 @@
 //
 //  Created by ZhiYou on 11/2/14.
 //  Copyright (c) 2014 ZhiYou. All rights reserved.
-//
+//  https://github.com/judeyouzhi/HKNTV
 
 #import "LiveViewController.h"
 #import "LiveCollectionViewCell.h"
@@ -16,7 +16,6 @@
 @implementation LiveViewController
 
 - (void)viewDidLoad {
-    NSLog(@"viewDidLoad begain");
     [super viewDidLoad];
     [self setUpCollection];
 }
@@ -41,13 +40,13 @@
 }
 
 #pragma mark - Collection View Data Source
+ 
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.dataMArr.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"create the cell begain");
     
     static NSString *collectionCellID = @"live_cell";
     LiveCollectionViewCell *cell = (LiveCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:collectionCellID forIndexPath:indexPath];
