@@ -70,7 +70,7 @@
 
 - (BOOL)collectionView:(UICollectionView *)collectionView
 shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"selected %ld", indexPath.row);
+    NSLog(@"selected %ld in live collection view", indexPath.row);
     self.selected_id = indexPath.row;
     return YES;
 }
