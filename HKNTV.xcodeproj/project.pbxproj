@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		851ED8A31A072345007DB60F /* MyAVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 851ED8A21A072345007DB60F /* MyAVPlayerViewController.m */; };
 		85634AC91A05D5130090D457 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85634AC81A05D5130090D457 /* main.m */; };
 		85634ACC1A05D5130090D457 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85634ACB1A05D5130090D457 /* AppDelegate.m */; };
 		85634ACF1A05D5130090D457 /* LiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85634ACE1A05D5130090D457 /* LiveViewController.m */; };
@@ -62,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		851ED8A11A072345007DB60F /* MyAVPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAVPlayerViewController.h; sourceTree = "<group>"; };
+		851ED8A21A072345007DB60F /* MyAVPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAVPlayerViewController.m; sourceTree = "<group>"; };
 		85634AC31A05D5130090D457 /* HKNTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HKNTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85634AC71A05D5130090D457 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85634AC81A05D5130090D457 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -166,6 +169,8 @@
 				85634AC61A05D5130090D457 /* Supporting Files */,
 				85634AEF1A05D7840090D457 /* LiveCollectionViewCell.h */,
 				85634AF01A05D7840090D457 /* LiveCollectionViewCell.m */,
+				851ED8A11A072345007DB60F /* MyAVPlayerViewController.h */,
+				851ED8A21A072345007DB60F /* MyAVPlayerViewController.m */,
 			);
 			path = HKNTV;
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 			files = (
 				85634AD21A05D5130090D457 /* VODViewController.m in Sources */,
 				85634ACC1A05D5130090D457 /* AppDelegate.m in Sources */,
+				851ED8A31A072345007DB60F /* MyAVPlayerViewController.m in Sources */,
 				85634ACF1A05D5130090D457 /* LiveViewController.m in Sources */,
 				85634AF11A05D7840090D457 /* LiveCollectionViewCell.m in Sources */,
 				85634AC91A05D5130090D457 /* main.m in Sources */,
@@ -565,6 +571,7 @@
 				85634AEB1A05D5140090D457 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		85634AEC1A05D5140090D457 /* Build configuration list for PBXNativeTarget "HKNTVTests" */ = {
 			isa = XCConfigurationList;
@@ -573,6 +580,7 @@
 				85634AEE1A05D5140090D457 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

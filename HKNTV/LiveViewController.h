@@ -13,5 +13,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *liveCollection;
 @property (strong, nonatomic)NSMutableArray *dataMArr;
 
+@property (assign, nonatomic) NSInteger selected_id;
+
 @end
 

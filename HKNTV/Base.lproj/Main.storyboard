@@ -52,7 +52,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="wa0-YI-8Ya">
-                                    <size key="itemSize" width="93" height="124"/>
+                                    <size key="itemSize" width="93" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -62,23 +62,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="93" height="124"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="93" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N0b-7J-Uev">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N0b-7J-Uev">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="0.0" y="0.0" width="93" height="100"/>
-                                                    </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AG-Km-D1D">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="37" y="123.5" width="34" height="20.5"/>
-                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -90,9 +84,9 @@
                                             <constraint firstItem="N0b-7J-Uev" firstAttribute="leading" secondItem="rD0-L0-rd6" secondAttribute="leadingMargin" constant="-8" id="hiu-O3-ZgM"/>
                                             <constraint firstItem="1AG-Km-D1D" firstAttribute="top" secondItem="N0b-7J-Uev" secondAttribute="bottom" constant="8" symbolic="YES" id="hyf-SZ-r4V"/>
                                             <constraint firstItem="N0b-7J-Uev" firstAttribute="top" secondItem="rD0-L0-rd6" secondAttribute="topMargin" constant="-8" id="lMr-3s-XEY"/>
-                                            <constraint firstItem="N0b-7J-Uev" firstAttribute="top" secondItem="rD0-L0-rd6" secondAttribute="topMargin" constant="-8" id="onK-eG-Ued"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="1AG-Km-D1D" secondAttribute="bottom" constant="-8" id="trD-JE-pq8"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="1AG-Km-D1D" secondAttribute="bottom" id="trD-JE-pq8"/>
                                         </constraints>
+                                        <size key="customSize" width="93" height="150"/>
                                         <variation key="default">
                                             <mask key="subviews">
                                                 <exclude reference="N0b-7J-Uev"/>
@@ -102,7 +96,6 @@
                                                 <exclude reference="BaB-5H-EqZ"/>
                                                 <exclude reference="hiu-O3-ZgM"/>
                                                 <exclude reference="lMr-3s-XEY"/>
-                                                <exclude reference="onK-eG-Ued"/>
                                                 <exclude reference="Hft-Ba-1xI"/>
                                                 <exclude reference="hyf-SZ-r4V"/>
                                                 <exclude reference="trD-JE-pq8"/>
@@ -117,7 +110,6 @@
                                                 <include reference="BaB-5H-EqZ"/>
                                                 <include reference="hiu-O3-ZgM"/>
                                                 <include reference="lMr-3s-XEY"/>
-                                                <include reference="onK-eG-Ued"/>
                                                 <include reference="Hft-Ba-1xI"/>
                                                 <include reference="hyf-SZ-r4V"/>
                                                 <include reference="trD-JE-pq8"/>
@@ -126,6 +118,7 @@
                                         <connections>
                                             <outlet property="img" destination="N0b-7J-Uev" id="3tL-ha-1Q5"/>
                                             <outlet property="title" destination="1AG-Km-D1D" id="zOO-y6-9mC"/>
+                                            <segue destination="91t-Ri-zlJ" kind="show" identifier="pushLivePlayer" id="eDf-kj-Cc1"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -194,6 +187,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="-320.25"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="Myl-J5-DiR">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="91t-Ri-zlJ" customClass="MyAVPlayerViewController" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DJb-ol-ZpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1452" y="-320.25"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">

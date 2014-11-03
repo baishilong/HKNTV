@@ -8,12 +8,15 @@
 
 #import "LiveViewController.h"
 #import "LiveCollectionViewCell.h"
+#import "MyAVPlayerViewController.h"
 
 @interface LiveViewController ()
 
 @end
 
 @implementation LiveViewController
+
+#define MAX_ITEMS 29
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,7 +25,7 @@
 
 -(void)setUpCollection{
     self.dataMArr = [NSMutableArray array];
-    for(NSInteger index = 0;index<29; index++){
+    for(NSInteger index = 0; index<MAX_ITEMS; index++){
         UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)index+1]];
         NSString *title = [NSString stringWithFormat:@"{0,%ld}",(long)index+1];
         NSDictionary *dic = @{@"image": image, @"title":title};
@@ -60,5 +63,23 @@
     
     return cell;
 };
+
+
+#pragma mark - Collection daleagte
+
+
+- (BOOL)collectionView:(UICollectionView *)collectionView
+shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"selected %ld", indexPath.row);
+    self.selected_id = indexPath.row;
+    return YES;
+}
+
+#pragma mark - Others
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"pushLivePlayer"]){ MyAVPlayerViewController *playerController = segue.destinationViewController;
+        [playerController setProg_id:self.selected_id];
+    } }
 
 @end
