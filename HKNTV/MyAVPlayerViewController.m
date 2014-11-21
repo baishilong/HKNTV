@@ -3,7 +3,7 @@
 //  HKNTV
 //
 //  Created by ZhiYou on 11/3/14.
-//  Copyright (c) 2014 ZhiYou. All rights reserved.
+//  Copyright (c) 2014 ZhiYou. All rights reserved by HKNTV.
 //
 
 #import "MyAVPlayerViewController.h"
