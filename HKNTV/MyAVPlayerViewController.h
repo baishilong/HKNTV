@@ -11,9 +11,11 @@
 
 @interface MyAVPlayerViewController : AVPlayerViewController
 
-@property(nonatomic, strong) AVPlayer *player;
+@property(nonatomic, weak) AVPlayer *player;
 @property (nonatomic, assign) NSInteger prog_id;
 
 @property (strong, nonatomic)NSMutableArray *urlArray;
+
+@property (strong) id playerOb;
 
 @end

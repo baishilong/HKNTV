@@ -93,12 +93,12 @@
                                                 <exclude reference="1AG-Km-D1D"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="BaB-5H-EqZ"/>
-                                                <exclude reference="hiu-O3-ZgM"/>
-                                                <exclude reference="lMr-3s-XEY"/>
                                                 <exclude reference="Hft-Ba-1xI"/>
                                                 <exclude reference="hyf-SZ-r4V"/>
                                                 <exclude reference="trD-JE-pq8"/>
+                                                <exclude reference="BaB-5H-EqZ"/>
+                                                <exclude reference="hiu-O3-ZgM"/>
+                                                <exclude reference="lMr-3s-XEY"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
@@ -107,12 +107,12 @@
                                                 <include reference="1AG-Km-D1D"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="BaB-5H-EqZ"/>
-                                                <include reference="hiu-O3-ZgM"/>
-                                                <include reference="lMr-3s-XEY"/>
                                                 <include reference="Hft-Ba-1xI"/>
                                                 <include reference="hyf-SZ-r4V"/>
                                                 <include reference="trD-JE-pq8"/>
+                                                <include reference="BaB-5H-EqZ"/>
+                                                <include reference="hiu-O3-ZgM"/>
+                                                <include reference="lMr-3s-XEY"/>
                                             </mask>
                                         </variation>
                                         <connections>
