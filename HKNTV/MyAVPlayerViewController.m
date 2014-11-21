@@ -53,15 +53,43 @@
 - (void) setUpPlayerObwithURL:(NSURL *) url{
     Float64 durationSeconds = CMTimeGetSeconds([[[AVURLAsset alloc] initWithURL:url options:nil] duration]);
     NSLog(@"duration seconds %f", durationSeconds);
-    CMTime firstThird = CMTimeMakeWithSeconds(durationSeconds/300.0, 1);
-    CMTime secondThird = CMTimeMakeWithSeconds(durationSeconds*2.0/300.0, 1);
-    NSArray *times = @[[NSValue valueWithCMTime:firstThird], [NSValue valueWithCMTime:secondThird]];
+    CMTime first = CMTimeMakeWithSeconds(2, 1);
+    CMTime second = CMTimeMakeWithSeconds(4, 1);
+    CMTime third = CMTimeMakeWithSeconds(10, 1);
+    CMTime forth = CMTimeMakeWithSeconds(14, 1);
+    CMTime fifth = CMTimeMakeWithSeconds(16, 1);
+    CMTime sixth = CMTimeMakeWithSeconds(20, 1);
+    NSArray *times = @[[NSValue valueWithCMTime:first],
+                       [NSValue valueWithCMTime:second],
+                       [NSValue valueWithCMTime:third],
+                       [NSValue valueWithCMTime:forth],
+                       [NSValue valueWithCMTime:fifth],
+                       [NSValue valueWithCMTime:sixth],
+                       ];
     
     self.playerOb = [self.player addBoundaryTimeObserverForTimes:times queue:NULL usingBlock:^{
         NSString *timeDescription = (NSString *)
         CFBridgingRelease(CMTimeCopyDescription(NULL, [self.player currentTime]));
         NSLog(@"Passed a boudary at %@", timeDescription);
+        UIImageView *picView = [[UIImageView alloc] initWithFrame:CGRectMake(35, 150, 10, 10)];
+        picView.backgroundColor = [UIColor redColor];
+        picView.tag = 99;
+        Boolean operated = false;
+        
+        for (UIView *subView in self.view.subviews)
+        {
+            if (subView.tag == 99)
+            {
+                [subView removeFromSuperview];
+                operated = true;
+            }
+        }
+        if(!operated){
+            [self.view addSubview:picView];
+        }
     }];
+    
+    
     
 }
 
