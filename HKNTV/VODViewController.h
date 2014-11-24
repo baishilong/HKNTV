@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VODViewController : UIViewController
+@interface VODViewController : UIViewController <UIGestureRecognizerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIImageView *img;
 
 @end
 

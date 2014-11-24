@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <AVKit/AVKit.h>
 
-@interface MyAVPlayerViewController : AVPlayerViewController
+@interface MyAVPlayerViewController : AVPlayerViewController <UIGestureRecognizerDelegate>
 
-@property(nonatomic, weak) AVPlayer *player;
+@property(nonatomic, strong) AVPlayer *player;
 @property (nonatomic, assign) NSInteger prog_id;
 
 @property (strong, nonatomic)NSMutableArray *urlArray;

@@ -50,6 +50,15 @@
  usingBlock:(void (^)(CMTime time)){NSLog(@"%lld \n", self.player.currentTime.value);};
  */
 
+-(void)handleSingleFingerEvent:(UITapGestureRecognizer *)sender{
+    NSLog(@"are you intrested in this product?");
+    UIImageView *product = [[UIImageView alloc] initWithFrame:CGRectMake(550, 20, 100, 150)];
+    product.backgroundColor = [UIColor blueColor];
+    product.alpha = 0.5;
+    product.image = [UIImage imageNamed:@"product.jpg"];
+    [self.view addSubview:product];
+}
+
 - (void) setUpPlayerObwithURL:(NSURL *) url{
     Float64 durationSeconds = CMTimeGetSeconds([[[AVURLAsset alloc] initWithURL:url options:nil] duration]);
     NSLog(@"duration seconds %f", durationSeconds);
@@ -58,7 +67,7 @@
     CMTime third = CMTimeMakeWithSeconds(10, 1);
     CMTime forth = CMTimeMakeWithSeconds(14, 1);
     CMTime fifth = CMTimeMakeWithSeconds(16, 1);
-    CMTime sixth = CMTimeMakeWithSeconds(20, 1);
+    CMTime sixth = CMTimeMakeWithSeconds(200, 1);
     NSArray *times = @[[NSValue valueWithCMTime:first],
                        [NSValue valueWithCMTime:second],
                        [NSValue valueWithCMTime:third],
@@ -66,17 +75,24 @@
                        [NSValue valueWithCMTime:fifth],
                        [NSValue valueWithCMTime:sixth],
                        ];
-    
+    __weak typeof(self) weakSelf = self;
     self.playerOb = [self.player addBoundaryTimeObserverForTimes:times queue:NULL usingBlock:^{
         NSString *timeDescription = (NSString *)
-        CFBridgingRelease(CMTimeCopyDescription(NULL, [self.player currentTime]));
+        CFBridgingRelease(CMTimeCopyDescription(NULL, [weakSelf.player currentTime]));
         NSLog(@"Passed a boudary at %@", timeDescription);
         UIImageView *picView = [[UIImageView alloc] initWithFrame:CGRectMake(35, 150, 10, 10)];
+        picView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *singleFingerOne = [[UITapGestureRecognizer alloc] initWithTarget:weakSelf
+                                                      action:@selector(handleSingleFingerEvent:)];
+        singleFingerOne.numberOfTouchesRequired = 1; //手指数
+        singleFingerOne.numberOfTapsRequired = 1; //tap次数
+        singleFingerOne.delegate = weakSelf;
+        [picView addGestureRecognizer:singleFingerOne];
         picView.backgroundColor = [UIColor redColor];
         picView.tag = 99;
         Boolean operated = false;
         
-        for (UIView *subView in self.view.subviews)
+        for (UIView *subView in weakSelf.view.subviews)
         {
             if (subView.tag == 99)
             {
@@ -85,7 +101,7 @@
             }
         }
         if(!operated){
-            [self.view addSubview:picView];
+            [weakSelf.view addSubview:picView];
         }
     }];
     
