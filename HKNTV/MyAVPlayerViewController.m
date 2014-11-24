@@ -50,6 +50,7 @@
  usingBlock:(void (^)(CMTime time)){NSLog(@"%lld \n", self.player.currentTime.value);};
  */
 
+//simplely list the product
 -(void)handleSingleFingerEvent:(UITapGestureRecognizer *)sender{
     NSLog(@"are you intrested in this product?");
     UIImageView *product = [[UIImageView alloc] initWithFrame:CGRectMake(550, 20, 100, 150)];
