@@ -52,6 +52,7 @@
 		85634B321A05DA100090D457 /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85634B111A05DA100090D457 /* 7.jpg */; };
 		85634B331A05DA100090D457 /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85634B121A05DA100090D457 /* 8.jpg */; };
 		85634B341A05DA100090D457 /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85634B131A05DA100090D457 /* 9.jpg */; };
+		85AA01E91A2310AF00F38659 /* product.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85AA01E81A2310AF00F38659 /* product.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		85634B111A05DA100090D457 /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpg; sourceTree = "<group>"; };
 		85634B121A05DA100090D457 /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = "<group>"; };
 		85634B131A05DA100090D457 /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
+		85AA01E81A2310AF00F38659 /* product.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = product.jpg; path = "../../Desktop/HKNTV/素材/product.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 		85634AF21A05DA100090D457 /* hktvdemopic */ = {
 			isa = PBXGroup;
 			children = (
+				85AA01E81A2310AF00F38659 /* product.jpg */,
 				852F58CC1A15C29000BD5939 /* sunrising.jpg */,
 				85634AF31A05DA100090D457 /* 1.jpg */,
 				85634AF41A05DA100090D457 /* 10.jpg */,
@@ -336,6 +339,7 @@
 				85634B181A05DA100090D457 /* 13.jpg in Resources */,
 				85634AD51A05D5130090D457 /* Main.storyboard in Resources */,
 				85634B211A05DA100090D457 /* 21.jpg in Resources */,
+				85AA01E91A2310AF00F38659 /* product.jpg in Resources */,
 				85634B251A05DA100090D457 /* 25.jpg in Resources */,
 				85634B171A05DA100090D457 /* 12.jpg in Resources */,
 				85634B341A05DA100090D457 /* 9.jpg in Resources */,

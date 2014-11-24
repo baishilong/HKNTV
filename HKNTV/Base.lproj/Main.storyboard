@@ -214,23 +214,64 @@
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="92" y="379" width="209.5" height="41.5"/>
+                                </variation>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
                                 <rect key="frame" x="192" y="329" width="215.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="93" y="436" width="215.5" height="17"/>
+                                </variation>
                             </label>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ZPo-EC-Sc1">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZPo-EC-Sc1" secondAttribute="trailing" constant="137" id="4AG-L1-6NN"/>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
+                            <constraint firstItem="zEq-FU-wV5" firstAttribute="top" secondItem="ZPo-EC-Sc1" secondAttribute="bottom" constant="8" id="GnN-qC-IlD"/>
+                            <constraint firstItem="zEq-FU-wV5" firstAttribute="top" secondItem="ZPo-EC-Sc1" secondAttribute="bottom" constant="8" id="JUc-zO-Dkw"/>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
+                            <constraint firstItem="ZPo-EC-Sc1" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="130" id="X3K-fV-H9N"/>
                             <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="ZPo-EC-Sc1" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="232" id="zw4-es-gbe"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ZPo-EC-Sc1"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="4AG-L1-6NN"/>
+                                <exclude reference="X3K-fV-H9N"/>
+                                <exclude reference="zw4-es-gbe"/>
+                                <exclude reference="GnN-qC-IlD"/>
+                                <exclude reference="JUc-zO-Dkw"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="ZPo-EC-Sc1"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="4AG-L1-6NN"/>
+                                <include reference="X3K-fV-H9N"/>
+                                <include reference="zw4-es-gbe"/>
+                                <include reference="GnN-qC-IlD"/>
+                                <include reference="JUc-zO-Dkw"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="img" destination="ZPo-EC-Sc1" id="iH5-KF-uiK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -257,6 +298,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1.jpg" width="180" height="240"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
