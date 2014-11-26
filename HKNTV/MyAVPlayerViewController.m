@@ -17,7 +17,7 @@
     self.urlArray = [NSMutableArray array];
     
     [self.urlArray addObject:@"http://devimages.apple.com/iphone/samples/bipbop/bipbopall.m3u8"];
-    [self.urlArray addObject:@"http://211.216.53.139:1935/vod/mp4:sample2.mp4/playlist.m3u8"];
+    [self.urlArray addObject:@"http://219.232.160.141:5080/hls/c64024e7cd451ac19613345704f985fa.m3u8"];
     [self.urlArray addObject:[NSMutableString stringWithFormat:@"http://%@/speed/speed.m3u8", STREAM_SVR_IP]];
     [self.urlArray addObject:[NSMutableString stringWithFormat:@"http://%@/duck/duck.m3u8", STREAM_SVR_IP]];
     [self.urlArray addObject:[NSMutableString stringWithFormat:@"http://%@/edge/edge.m3u8", STREAM_SVR_IP]];
@@ -53,7 +53,13 @@
 //simplely list the product
 -(void)handleSingleFingerEvent:(UITapGestureRecognizer *)sender{
     NSLog(@"are you intrested in this product?");
-    UIImageView *product = [[UIImageView alloc] initWithFrame:CGRectMake(550, 20, 100, 150)];
+    int x = 250, y=20;
+    if(self.interfaceOrientation == UIInterfaceOrientationLandscapeLeft||
+       self.interfaceOrientation == UIInterfaceOrientationLandscapeRight){
+        x = 550;
+    }
+    UIImageView *product = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, 100, 150)];
+    
     product.backgroundColor = [UIColor blueColor];
     product.alpha = 0.5;
     product.image = [UIImage imageNamed:@"product.jpg"];

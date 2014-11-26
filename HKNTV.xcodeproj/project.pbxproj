@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D8F2D081A25DFCB00B0F8FE /* product.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D8F2D061A25DFCB00B0F8FE /* product.jpg */; };
+		1D8F2D091A25DFCB00B0F8FE /* sunrising.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D8F2D071A25DFCB00B0F8FE /* sunrising.jpg */; };
 		851ED8A31A072345007DB60F /* MyAVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 851ED8A21A072345007DB60F /* MyAVPlayerViewController.m */; };
-		852F58CD1A15C29000BD5939 /* sunrising.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 852F58CC1A15C29000BD5939 /* sunrising.jpg */; };
 		852F58CF1A17B5C700BD5939 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852F58CE1A17B5C700BD5939 /* CoreMedia.framework */; };
 		85634AC91A05D5130090D457 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85634AC81A05D5130090D457 /* main.m */; };
 		85634ACC1A05D5130090D457 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85634ACB1A05D5130090D457 /* AppDelegate.m */; };
@@ -52,7 +53,6 @@
 		85634B321A05DA100090D457 /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85634B111A05DA100090D457 /* 7.jpg */; };
 		85634B331A05DA100090D457 /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85634B121A05DA100090D457 /* 8.jpg */; };
 		85634B341A05DA100090D457 /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85634B131A05DA100090D457 /* 9.jpg */; };
-		85AA01E91A2310AF00F38659 /* product.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85AA01E81A2310AF00F38659 /* product.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,9 +66,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D8F2D061A25DFCB00B0F8FE /* product.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = product.jpg; sourceTree = "<group>"; };
+		1D8F2D071A25DFCB00B0F8FE /* sunrising.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunrising.jpg; sourceTree = "<group>"; };
 		851ED8A11A072345007DB60F /* MyAVPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAVPlayerViewController.h; sourceTree = "<group>"; };
 		851ED8A21A072345007DB60F /* MyAVPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAVPlayerViewController.m; sourceTree = "<group>"; };
-		852F58CC1A15C29000BD5939 /* sunrising.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sunrising.jpg; path = "../../Desktop/HKNTV/素材/sunrising.jpg"; sourceTree = "<group>"; };
 		852F58CE1A17B5C700BD5939 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		85634AC31A05D5130090D457 /* HKNTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HKNTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85634AC71A05D5130090D457 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -120,7 +121,6 @@
 		85634B111A05DA100090D457 /* 7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpg; sourceTree = "<group>"; };
 		85634B121A05DA100090D457 /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = "<group>"; };
 		85634B131A05DA100090D457 /* 9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpg; sourceTree = "<group>"; };
-		85AA01E81A2310AF00F38659 /* product.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = product.jpg; path = "../../Desktop/HKNTV/素材/product.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,8 +212,8 @@
 		85634AF21A05DA100090D457 /* hktvdemopic */ = {
 			isa = PBXGroup;
 			children = (
-				85AA01E81A2310AF00F38659 /* product.jpg */,
-				852F58CC1A15C29000BD5939 /* sunrising.jpg */,
+				1D8F2D061A25DFCB00B0F8FE /* product.jpg */,
+				1D8F2D071A25DFCB00B0F8FE /* sunrising.jpg */,
 				85634AF31A05DA100090D457 /* 1.jpg */,
 				85634AF41A05DA100090D457 /* 10.jpg */,
 				85634AF51A05DA100090D457 /* 11.jpg */,
@@ -336,10 +336,10 @@
 				85634B1D1A05DA100090D457 /* 18.jpg in Resources */,
 				85634B191A05DA100090D457 /* 14.jpg in Resources */,
 				85634B151A05DA100090D457 /* 10.jpg in Resources */,
+				1D8F2D091A25DFCB00B0F8FE /* sunrising.jpg in Resources */,
 				85634B181A05DA100090D457 /* 13.jpg in Resources */,
 				85634AD51A05D5130090D457 /* Main.storyboard in Resources */,
 				85634B211A05DA100090D457 /* 21.jpg in Resources */,
-				85AA01E91A2310AF00F38659 /* product.jpg in Resources */,
 				85634B251A05DA100090D457 /* 25.jpg in Resources */,
 				85634B171A05DA100090D457 /* 12.jpg in Resources */,
 				85634B341A05DA100090D457 /* 9.jpg in Resources */,
@@ -359,7 +359,6 @@
 				85634B281A05DA100090D457 /* 28.jpg in Resources */,
 				85634B2F1A05DA100090D457 /* 4.jpg in Resources */,
 				85634B2A1A05DA100090D457 /* 3.jpg in Resources */,
-				852F58CD1A15C29000BD5939 /* sunrising.jpg in Resources */,
 				85634B161A05DA100090D457 /* 11.jpg in Resources */,
 				85634B2D1A05DA100090D457 /* 32.jpg in Resources */,
 				85634B1C1A05DA100090D457 /* 17.jpg in Resources */,
@@ -367,6 +366,7 @@
 				85634B241A05DA100090D457 /* 24.jpg in Resources */,
 				85634B261A05DA100090D457 /* 26.jpg in Resources */,
 				85634B1F1A05DA100090D457 /* 2.jpg in Resources */,
+				1D8F2D081A25DFCB00B0F8FE /* product.jpg in Resources */,
 				85634B221A05DA100090D457 /* 22.jpg in Resources */,
 				85634ADA1A05D5130090D457 /* LaunchScreen.xib in Resources */,
 				85634AD71A05D5130090D457 /* Images.xcassets in Resources */,
