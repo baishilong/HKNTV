@@ -11,7 +11,8 @@
 
 @implementation MyAVPlayerViewController
 
-#define STREAM_SVR_IP @"192.168.1.101"
+#define STREAM_SVR_IP @"192.168.1.106"
+//#define STREAM_SVR_IP @"172.16.106.125"
 
 - (void) setupURLArray{
     self.urlArray = [NSMutableArray array];
@@ -20,9 +21,9 @@
     [self.urlArray addObject:@"http://219.232.160.141:5080/hls/c64024e7cd451ac19613345704f985fa.m3u8"];
     [self.urlArray addObject:[NSMutableString stringWithFormat:@"http://%@/speed/speed.m3u8", STREAM_SVR_IP]];
     [self.urlArray addObject:[NSMutableString stringWithFormat:@"http://%@/duck/duck.m3u8", STREAM_SVR_IP]];
-    [self.urlArray addObject:[NSMutableString stringWithFormat:@"http://%@/edge/edge.m3u8", STREAM_SVR_IP]];
-    
     [self.urlArray addObject:[NSMutableString stringWithFormat:@"http://%@/duck/duck.m3u8", STREAM_SVR_IP]];
+    
+    [self.urlArray addObject:[NSMutableString stringWithFormat:@"http://%@/bhaj/cell.m3u8", STREAM_SVR_IP]];
 
 }
 
@@ -42,6 +43,8 @@
     NSLog(@"%@", url);
     [self setPlayer: [AVPlayer playerWithURL:url]];
     [self setUpPlayerObwithURL:url];
+    [self setVideoGravity:@"AVLayerVideoGravityResizeAspect"];
+    [super viewDidLoad];
 }
 
 /*
@@ -62,32 +65,39 @@
     
     product.backgroundColor = [UIColor blueColor];
     product.alpha = 0.5;
-    product.image = [UIImage imageNamed:@"product.jpg"];
+    product.image = [UIImage imageNamed:@"bear.png"];
     [self.view addSubview:product];
+    for (UIView *subView in self.view.subviews)
+    {
+        if (subView.tag == 99)
+        {
+            [subView removeFromSuperview];
+        }
+    }
 }
 
 - (void) setUpPlayerObwithURL:(NSURL *) url{
     Float64 durationSeconds = CMTimeGetSeconds([[[AVURLAsset alloc] initWithURL:url options:nil] duration]);
     NSLog(@"duration seconds %f", durationSeconds);
-    CMTime first = CMTimeMakeWithSeconds(2, 1);
-    CMTime second = CMTimeMakeWithSeconds(4, 1);
-    CMTime third = CMTimeMakeWithSeconds(10, 1);
-    CMTime forth = CMTimeMakeWithSeconds(14, 1);
-    CMTime fifth = CMTimeMakeWithSeconds(16, 1);
-    CMTime sixth = CMTimeMakeWithSeconds(200, 1);
+    CMTime first = CMTimeMakeWithSeconds(16, 1);
+    CMTime second = CMTimeMakeWithSeconds(20, 1);
+    CMTime third = CMTimeMakeWithSeconds(40, 1);
+    CMTime forth = CMTimeMakeWithSeconds(53, 1);
+//    CMTime fifth = CMTimeMakeWithSeconds(16, 1);
+//    CMTime sixth = CMTimeMakeWithSeconds(200, 1);
     NSArray *times = @[[NSValue valueWithCMTime:first],
                        [NSValue valueWithCMTime:second],
                        [NSValue valueWithCMTime:third],
                        [NSValue valueWithCMTime:forth],
-                       [NSValue valueWithCMTime:fifth],
-                       [NSValue valueWithCMTime:sixth],
+//                       [NSValue valueWithCMTime:fifth],
+//                       [NSValue valueWithCMTime:sixth],
                        ];
     __weak typeof(self) weakSelf = self;
     self.playerOb = [self.player addBoundaryTimeObserverForTimes:times queue:NULL usingBlock:^{
         NSString *timeDescription = (NSString *)
         CFBridgingRelease(CMTimeCopyDescription(NULL, [weakSelf.player currentTime]));
         NSLog(@"Passed a boudary at %@", timeDescription);
-        UIImageView *picView = [[UIImageView alloc] initWithFrame:CGRectMake(35, 150, 10, 10)];
+        UIImageView *picView = [[UIImageView alloc] initWithFrame:CGRectMake(280, 100, 20, 20)];
         picView.userInteractionEnabled = YES;
         UITapGestureRecognizer *singleFingerOne = [[UITapGestureRecognizer alloc] initWithTarget:weakSelf
                                                       action:@selector(handleSingleFingerEvent:)];
@@ -95,7 +105,8 @@
         singleFingerOne.numberOfTapsRequired = 1; //tap次数
         singleFingerOne.delegate = weakSelf;
         [picView addGestureRecognizer:singleFingerOne];
-        picView.backgroundColor = [UIColor redColor];
+        //picView.backgroundColor = [UIColor redColor];
+        picView.image = [UIImage imageNamed:@"redmark.png"];
         picView.tag = 99;
         Boolean operated = false;
         

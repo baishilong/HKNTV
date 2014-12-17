@@ -12,14 +12,52 @@
 
 @interface LiveViewController ()
 
+@property (nonatomic,strong) NSMutableArray *names;
+
 @end
 
 @implementation LiveViewController
 
 #define MAX_ITEMS 29
 
+- (void) setupNameArray{
+    self.names = [NSMutableArray array];
+    
+    [self.names addObject:@"同桌的你"];
+    [self.names addObject:@"一身一世"];
+    [self.names addObject:@"亲爱的2014"];
+    [self.names addObject:@"燃情岁月"];
+    [self.names addObject:@"大峰祖师"];
+    [self.names addObject:@"定格胶片"];
+    [self.names addObject:@"扑通扑通心在跳"];
+    [self.names addObject:@"北京爱情故事"];
+    [self.names addObject:@"白银帝国"];
+    [self.names addObject:@"同桌的你"];
+    [self.names addObject:@"一身一世"];
+    [self.names addObject:@"亲爱的2014"];
+    [self.names addObject:@"燃情岁月"];
+    [self.names addObject:@"大峰祖师"];
+    [self.names addObject:@"定格胶片"];
+    [self.names addObject:@"扑通扑通心在跳"];
+    [self.names addObject:@"北京爱情故事"];
+    [self.names addObject:@"白银帝国"];
+    [self.names addObject:@"北京爱情故事"];
+    [self.names addObject:@"白银帝国"];
+    [self.names addObject:@"同桌的你"];
+    [self.names addObject:@"一身一世"];
+    [self.names addObject:@"亲爱的2014"];
+    [self.names addObject:@"燃情岁月"];
+    [self.names addObject:@"大峰祖师"];
+    [self.names addObject:@"定格胶片"];
+    [self.names addObject:@"扑通扑通心在跳"];
+    [self.names addObject:@"北京爱情故事"];
+    [self.names addObject:@"白银帝国"];
+}
+
 - (void)viewDidLoad {
+    NSLog(@"viewDidLoad live");
     [super viewDidLoad];
+    [self setupNameArray];
     [self setUpCollection];
 }
 
@@ -27,7 +65,7 @@
     self.dataMArr = [NSMutableArray array];
     for(NSInteger index = 0; index<MAX_ITEMS; index++){
         UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)index+1]];
-        NSString *title = [NSString stringWithFormat:@"{0,%ld}",(long)index+1];
+        NSString *title = [NSString stringWithFormat:@"%@", self.names[index]];
         NSDictionary *dic = @{@"image": image, @"title":title};
         [self.dataMArr addObject:dic];
     }
