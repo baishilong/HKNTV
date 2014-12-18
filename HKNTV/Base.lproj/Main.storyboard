@@ -72,8 +72,7 @@
                                                             <exclude reference="cVe-vL-mi9"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="0.0" y="141" width="85" height="21"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="cVe-vL-mi9"/>
                                                         </mask>
@@ -101,15 +100,15 @@
                                                 <exclude reference="1AG-Km-D1D"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="Yyx-gs-U0H"/>
-                                                <exclude reference="myl-ps-5tm"/>
-                                                <exclude reference="uOu-OL-rHZ"/>
                                                 <exclude reference="0Hg-Tw-e8F"/>
                                                 <exclude reference="FpP-5i-fav"/>
                                                 <exclude reference="XPE-ZZ-Mwm"/>
                                                 <exclude reference="jxr-hB-VaR"/>
                                                 <exclude reference="qMF-Ig-Suc"/>
                                                 <exclude reference="y82-g7-lia"/>
+                                                <exclude reference="Yyx-gs-U0H"/>
+                                                <exclude reference="myl-ps-5tm"/>
+                                                <exclude reference="uOu-OL-rHZ"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
@@ -118,15 +117,15 @@
                                                 <include reference="1AG-Km-D1D"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="Yyx-gs-U0H"/>
-                                                <include reference="myl-ps-5tm"/>
-                                                <include reference="uOu-OL-rHZ"/>
                                                 <include reference="0Hg-Tw-e8F"/>
                                                 <include reference="FpP-5i-fav"/>
                                                 <include reference="XPE-ZZ-Mwm"/>
                                                 <include reference="jxr-hB-VaR"/>
                                                 <include reference="qMF-Ig-Suc"/>
                                                 <include reference="y82-g7-lia"/>
+                                                <include reference="Yyx-gs-U0H"/>
+                                                <include reference="myl-ps-5tm"/>
+                                                <include reference="uOu-OL-rHZ"/>
                                             </mask>
                                         </variation>
                                         <connections>
