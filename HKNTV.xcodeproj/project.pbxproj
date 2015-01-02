@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D2C90901A490322006381F5 /* networktv_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2C908F1A490322006381F5 /* networktv_logo.png */; };
+		1D2E01F41A42A33400E0F8AB /* LIVE.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E01F31A42A33400E0F8AB /* LIVE.png */; };
+		1D2E01F61A42A5ED00E0F8AB /* redbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E01F51A42A5ED00E0F8AB /* redbutton.png */; };
+		1D30F0471A442C5B00DAEE3D /* NetworkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D30F0461A442C5B00DAEE3D /* NetworkTableViewCell.m */; };
+		1D30F0501A46951B00DAEE3D /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D30F04F1A46951B00DAEE3D /* SettingsTableViewController.m */; };
 		1D845A601A2710E000E1EED3 /* bear.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D845A5F1A2710E000E1EED3 /* bear.png */; };
 		1D8F2D081A25DFCB00B0F8FE /* product.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D8F2D061A25DFCB00B0F8FE /* product.jpg */; };
 		1D8F2D091A25DFCB00B0F8FE /* sunrising.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D8F2D071A25DFCB00B0F8FE /* sunrising.jpg */; };
@@ -16,7 +21,6 @@
 		85634AC91A05D5130090D457 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85634AC81A05D5130090D457 /* main.m */; };
 		85634ACC1A05D5130090D457 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85634ACB1A05D5130090D457 /* AppDelegate.m */; };
 		85634ACF1A05D5130090D457 /* LiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85634ACE1A05D5130090D457 /* LiveViewController.m */; };
-		85634AD21A05D5130090D457 /* VODViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85634AD11A05D5130090D457 /* VODViewController.m */; };
 		85634AD51A05D5130090D457 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85634AD31A05D5130090D457 /* Main.storyboard */; };
 		85634AD71A05D5130090D457 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85634AD61A05D5130090D457 /* Images.xcassets */; };
 		85634ADA1A05D5130090D457 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85634AD81A05D5130090D457 /* LaunchScreen.xib */; };
@@ -68,6 +72,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D2C908F1A490322006381F5 /* networktv_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = networktv_logo.png; sourceTree = "<group>"; };
+		1D2E01F31A42A33400E0F8AB /* LIVE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LIVE.png; sourceTree = "<group>"; };
+		1D2E01F51A42A5ED00E0F8AB /* redbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redbutton.png; sourceTree = "<group>"; };
+		1D30F0451A442C5B00DAEE3D /* NetworkTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkTableViewCell.h; sourceTree = "<group>"; };
+		1D30F0461A442C5B00DAEE3D /* NetworkTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkTableViewCell.m; sourceTree = "<group>"; };
+		1D30F04E1A46951B00DAEE3D /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		1D30F04F1A46951B00DAEE3D /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		1D845A5F1A2710E000E1EED3 /* bear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bear.png; sourceTree = "<group>"; };
 		1D8F2D061A25DFCB00B0F8FE /* product.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = product.jpg; sourceTree = "<group>"; };
 		1D8F2D071A25DFCB00B0F8FE /* sunrising.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunrising.jpg; sourceTree = "<group>"; };
@@ -82,8 +93,6 @@
 		85634ACB1A05D5130090D457 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		85634ACD1A05D5130090D457 /* LiveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveViewController.h; sourceTree = "<group>"; };
 		85634ACE1A05D5130090D457 /* LiveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiveViewController.m; sourceTree = "<group>"; };
-		85634AD01A05D5130090D457 /* VODViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VODViewController.h; sourceTree = "<group>"; };
-		85634AD11A05D5130090D457 /* VODViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VODViewController.m; sourceTree = "<group>"; };
 		85634AD41A05D5130090D457 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		85634AD61A05D5130090D457 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		85634AD91A05D5130090D457 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -146,6 +155,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D30F0441A442C2300DAEE3D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1D30F0451A442C5B00DAEE3D /* NetworkTableViewCell.h */,
+				1D30F0461A442C5B00DAEE3D /* NetworkTableViewCell.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		85634ABA1A05D5130090D457 = {
 			isa = PBXGroup;
 			children = (
@@ -168,13 +186,12 @@
 		85634AC51A05D5130090D457 /* HKNTV */ = {
 			isa = PBXGroup;
 			children = (
+				1D30F0441A442C2300DAEE3D /* Settings */,
 				85634AF21A05DA100090D457 /* hktvdemopic */,
 				85634ACA1A05D5130090D457 /* AppDelegate.h */,
 				85634ACB1A05D5130090D457 /* AppDelegate.m */,
 				85634ACD1A05D5130090D457 /* LiveViewController.h */,
 				85634ACE1A05D5130090D457 /* LiveViewController.m */,
-				85634AD01A05D5130090D457 /* VODViewController.h */,
-				85634AD11A05D5130090D457 /* VODViewController.m */,
 				85634AD31A05D5130090D457 /* Main.storyboard */,
 				85634AD61A05D5130090D457 /* Images.xcassets */,
 				85634AD81A05D5130090D457 /* LaunchScreen.xib */,
@@ -183,6 +200,8 @@
 				85634AF01A05D7840090D457 /* LiveCollectionViewCell.m */,
 				851ED8A11A072345007DB60F /* MyAVPlayerViewController.h */,
 				851ED8A21A072345007DB60F /* MyAVPlayerViewController.m */,
+				1D30F04E1A46951B00DAEE3D /* SettingsTableViewController.h */,
+				1D30F04F1A46951B00DAEE3D /* SettingsTableViewController.m */,
 			);
 			path = HKNTV;
 			sourceTree = "<group>";
@@ -216,6 +235,9 @@
 		85634AF21A05DA100090D457 /* hktvdemopic */ = {
 			isa = PBXGroup;
 			children = (
+				1D2C908F1A490322006381F5 /* networktv_logo.png */,
+				1D2E01F51A42A5ED00E0F8AB /* redbutton.png */,
+				1D2E01F31A42A33400E0F8AB /* LIVE.png */,
 				1D845A5F1A2710E000E1EED3 /* bear.png */,
 				1D8F2D0A1A25F9C600B0F8FE /* redmark.png */,
 				1D8F2D061A25DFCB00B0F8FE /* product.jpg */,
@@ -339,11 +361,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D2C90901A490322006381F5 /* networktv_logo.png in Resources */,
 				85634B311A05DA100090D457 /* 6.jpg in Resources */,
 				85634B1D1A05DA100090D457 /* 18.jpg in Resources */,
 				85634B191A05DA100090D457 /* 14.jpg in Resources */,
 				85634B151A05DA100090D457 /* 10.jpg in Resources */,
 				1D8F2D091A25DFCB00B0F8FE /* sunrising.jpg in Resources */,
+				1D2E01F41A42A33400E0F8AB /* LIVE.png in Resources */,
 				85634B181A05DA100090D457 /* 13.jpg in Resources */,
 				85634AD51A05D5130090D457 /* Main.storyboard in Resources */,
 				1D8F2D0B1A25F9C600B0F8FE /* redmark.png in Resources */,
@@ -361,6 +385,7 @@
 				85634B1B1A05DA100090D457 /* 16.jpg in Resources */,
 				85634B2E1A05DA100090D457 /* 33.jpg in Resources */,
 				1D845A601A2710E000E1EED3 /* bear.png in Resources */,
+				1D2E01F61A42A5ED00E0F8AB /* redbutton.png in Resources */,
 				85634B1E1A05DA100090D457 /* 19.jpg in Resources */,
 				85634B291A05DA100090D457 /* 29.jpg in Resources */,
 				85634B331A05DA100090D457 /* 8.jpg in Resources */,
@@ -396,9 +421,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85634AD21A05D5130090D457 /* VODViewController.m in Sources */,
+				1D30F0501A46951B00DAEE3D /* SettingsTableViewController.m in Sources */,
 				85634ACC1A05D5130090D457 /* AppDelegate.m in Sources */,
 				851ED8A31A072345007DB60F /* MyAVPlayerViewController.m in Sources */,
+				1D30F0471A442C5B00DAEE3D /* NetworkTableViewCell.m in Sources */,
 				85634ACF1A05D5130090D457 /* LiveViewController.m in Sources */,
 				85634AF11A05D7840090D457 /* LiveCollectionViewCell.m in Sources */,
 				85634AC91A05D5130090D457 /* main.m in Sources */,

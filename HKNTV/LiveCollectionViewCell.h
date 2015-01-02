@@ -11,5 +11,7 @@
 @interface LiveCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *img;
 @property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UIImageView *liveImg;
+@property (weak, nonatomic) IBOutlet UIImageView *redbtn;
 
 @end

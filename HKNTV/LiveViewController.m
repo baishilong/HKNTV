@@ -13,6 +13,7 @@
 @interface LiveViewController ()
 
 @property (nonatomic,strong) NSMutableArray *names;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -23,35 +24,36 @@
 - (void) setupNameArray{
     self.names = [NSMutableArray array];
     
-    [self.names addObject:@"同桌的你"];
-    [self.names addObject:@"一身一世"];
-    [self.names addObject:@"亲爱的2014"];
-    [self.names addObject:@"燃情岁月"];
-    [self.names addObject:@"大峰祖师"];
-    [self.names addObject:@"定格胶片"];
-    [self.names addObject:@"扑通扑通心在跳"];
-    [self.names addObject:@"北京爱情故事"];
-    [self.names addObject:@"白银帝国"];
-    [self.names addObject:@"同桌的你"];
-    [self.names addObject:@"一身一世"];
-    [self.names addObject:@"亲爱的2014"];
-    [self.names addObject:@"燃情岁月"];
-    [self.names addObject:@"大峰祖师"];
-    [self.names addObject:@"定格胶片"];
-    [self.names addObject:@"扑通扑通心在跳"];
-    [self.names addObject:@"北京爱情故事"];
-    [self.names addObject:@"白银帝国"];
-    [self.names addObject:@"北京爱情故事"];
-    [self.names addObject:@"白银帝国"];
-    [self.names addObject:@"同桌的你"];
-    [self.names addObject:@"一身一世"];
-    [self.names addObject:@"亲爱的2014"];
-    [self.names addObject:@"燃情岁月"];
-    [self.names addObject:@"大峰祖师"];
-    [self.names addObject:@"定格胶片"];
-    [self.names addObject:@"扑通扑通心在跳"];
-    [self.names addObject:@"北京爱情故事"];
-    [self.names addObject:@"白银帝国"];
+    [self.names addObject:@"Bedknobs and Broomsticks"];
+    [self.names addObject:@"Clear and Present Danger"];
+    [self.names addObject:@"A Cinderella Story"];
+    [self.names addObject:@"Ernest Goes to Camp"];
+    [self.names addObject:@"The Final Destination"];
+    [self.names addObject:@"Five Easy Pieces"];
+    [self.names addObject:@"Gangs of New York"];
+    [self.names addObject:@"Good Will Hunting"];
+    [self.names addObject:@"Mad Max 2: The Road Warrior"];
+    [self.names addObject:@"Bedknobs and Broomsticks"];
+    [self.names addObject:@"Clear and Present Danger"];
+    [self.names addObject:@"A Cinderella Story"];
+    [self.names addObject:@"Ernest Goes to Camp"];
+    [self.names addObject:@"The Final Destination"];
+    [self.names addObject:@"Five Easy Pieces"];
+    [self.names addObject:@"Gangs of New York"];
+    [self.names addObject:@"Good Will Hunting"];
+    [self.names addObject:@"Mad Max 2: The Road Warrior"];
+    [self.names addObject:@"Bedknobs and Broomsticks"];
+    [self.names addObject:@"Clear and Present Danger"];
+    [self.names addObject:@"A Cinderella Story"];
+    [self.names addObject:@"Ernest Goes to Camp"];
+    [self.names addObject:@"The Final Destination"];
+    [self.names addObject:@"Five Easy Pieces"];
+    [self.names addObject:@"Gangs of New York"];
+    [self.names addObject:@"Good Will Hunting"];
+    [self.names addObject:@"Mad Max 2: The Road Warrior"];
+    [self.names addObject:@"Gangs of New York"];
+    [self.names addObject:@"Good Will Hunting"];
+    [self.names addObject:@"Mad Max 2: The Road Warrior"];
 }
 
 - (void)viewDidLoad {
@@ -59,6 +61,15 @@
     [super viewDidLoad];
     [self setupNameArray];
     [self setUpCollection];
+    /* Create the refresh control */
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    //self.refreshControl = self.refreshControl;
+    [refreshControl addTarget:self
+                            action:@selector(handleRefresh:)
+                  forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+    self.liveCollection.alwaysBounceVertical = YES;
+    [self.liveCollection addSubview:refreshControl];
 }
 
 -(void)setUpCollection{
@@ -66,7 +77,18 @@
     for(NSInteger index = 0; index<MAX_ITEMS; index++){
         UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)index+1]];
         NSString *title = [NSString stringWithFormat:@"%@", self.names[index]];
-        NSDictionary *dic = @{@"image": image, @"title":title};
+        
+//        NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:3];
+//        [dic setObject:image forKey:@"image"];
+//        [dic setObject:title forKey:@"title"];
+//        [dic setObject:@false forKey:@"isLive"];
+        NSMutableDictionary * dic = [NSMutableDictionary
+                                       dictionaryWithObjects:@[image, title, @false]
+                                       forKeys:@[@"image",@"title",@"isLive"]];
+        
+        if (index == 2 || index == 3) {
+            dic[@"isLive"] = @true;
+        }
         [self.dataMArr addObject:dic];
     }
     self.liveCollection.delegate = self;
@@ -79,6 +101,29 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void) handleRefresh:(id)paramSender{
+    
+    /* Put a bit of delay between when the refresh control is released
+     and when we actually do the refreshing to make the UI look a bit
+     smoother than just doing the update without the animation */
+    int64_t delayInSeconds = 1.0f;
+    dispatch_time_t popTime =
+    dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        
+        /* Add the current date to the list of dates that we have
+         so that when the table view is refreshed, a new item will appear
+         on the screen so that the user will see the difference between
+         the before and the after of the refresh */
+        NSLog(@"refresh called");
+        [self.refreshControl endRefreshing];
+        
+    });
+    
+}
+
 
 #pragma mark - Collection View Data Source
  
@@ -95,6 +140,14 @@
     NSDictionary *dic    = self.dataMArr[indexPath.row];
     UIImage *image       = dic[@"image"];
     NSString *title      = dic[@"title"];
+    NSLog(@"index %ld", (long)indexPath.row);
+    if ([dic[@"isLive" ] isEqual: @false] ) {
+        cell.liveImg.hidden = YES;
+        cell.redbtn.hidden = YES;
+    }else{
+        cell.liveImg.hidden = NO;
+        cell.redbtn.hidden = NO;
+    }
     
     cell.img.image = image;
     cell.title.text = title;
