@@ -9,6 +9,7 @@
 #import "LiveViewController.h"
 #import "LiveCollectionViewCell.h"
 #import "MyAVPlayerViewController.h"
+#import "NTVColor.h"
 
 @interface LiveViewController ()
 
@@ -151,6 +152,7 @@
     
     cell.img.image = image;
     cell.title.text = title;
+    cell.title.textColor = NTVRed;
     
     return cell;
 };

@@ -12,6 +12,9 @@
 		1D2E01F61A42A5ED00E0F8AB /* redbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E01F51A42A5ED00E0F8AB /* redbutton.png */; };
 		1D30F0471A442C5B00DAEE3D /* NetworkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D30F0461A442C5B00DAEE3D /* NetworkTableViewCell.m */; };
 		1D30F0501A46951B00DAEE3D /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D30F04F1A46951B00DAEE3D /* SettingsTableViewController.m */; };
+		1D7CFD7F1A5805E80027150E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D7CFD7E1A5805E80027150E /* UIKit.framework */; };
+		1D7CFD811A5806A70027150E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D7CFD801A5806A70027150E /* CoreGraphics.framework */; };
+		1D7CFD841A5807700027150E /* NTVColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7CFD831A5807700027150E /* NTVColor.m */; };
 		1D845A601A2710E000E1EED3 /* bear.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D845A5F1A2710E000E1EED3 /* bear.png */; };
 		1D8F2D081A25DFCB00B0F8FE /* product.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D8F2D061A25DFCB00B0F8FE /* product.jpg */; };
 		1D8F2D091A25DFCB00B0F8FE /* sunrising.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D8F2D071A25DFCB00B0F8FE /* sunrising.jpg */; };
@@ -79,6 +82,10 @@
 		1D30F0461A442C5B00DAEE3D /* NetworkTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkTableViewCell.m; sourceTree = "<group>"; };
 		1D30F04E1A46951B00DAEE3D /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		1D30F04F1A46951B00DAEE3D /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		1D7CFD7E1A5805E80027150E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1D7CFD801A5806A70027150E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1D7CFD821A5807700027150E /* NTVColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTVColor.h; sourceTree = "<group>"; };
+		1D7CFD831A5807700027150E /* NTVColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTVColor.m; sourceTree = "<group>"; };
 		1D845A5F1A2710E000E1EED3 /* bear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bear.png; sourceTree = "<group>"; };
 		1D8F2D061A25DFCB00B0F8FE /* product.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = product.jpg; sourceTree = "<group>"; };
 		1D8F2D071A25DFCB00B0F8FE /* sunrising.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunrising.jpg; sourceTree = "<group>"; };
@@ -141,6 +148,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D7CFD811A5806A70027150E /* CoreGraphics.framework in Frameworks */,
+				1D7CFD7F1A5805E80027150E /* UIKit.framework in Frameworks */,
 				852F58CF1A17B5C700BD5939 /* CoreMedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,12 +173,23 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
+		1D7CFD7A1A5803430027150E /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				1D7CFD821A5807700027150E /* NTVColor.h */,
+				1D7CFD831A5807700027150E /* NTVColor.m */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
 		85634ABA1A05D5130090D457 = {
 			isa = PBXGroup;
 			children = (
-				852F58CE1A17B5C700BD5939 /* CoreMedia.framework */,
 				85634AC51A05D5130090D457 /* HKNTV */,
 				85634AE21A05D5140090D457 /* HKNTVTests */,
+				1D7CFD7E1A5805E80027150E /* UIKit.framework */,
+				1D7CFD801A5806A70027150E /* CoreGraphics.framework */,
+				852F58CE1A17B5C700BD5939 /* CoreMedia.framework */,
 				85634AC41A05D5130090D457 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -186,6 +206,7 @@
 		85634AC51A05D5130090D457 /* HKNTV */ = {
 			isa = PBXGroup;
 			children = (
+				1D7CFD7A1A5803430027150E /* utils */,
 				1D30F0441A442C2300DAEE3D /* Settings */,
 				85634AF21A05DA100090D457 /* hktvdemopic */,
 				85634ACA1A05D5130090D457 /* AppDelegate.h */,
@@ -427,6 +448,7 @@
 				1D30F0471A442C5B00DAEE3D /* NetworkTableViewCell.m in Sources */,
 				85634ACF1A05D5130090D457 /* LiveViewController.m in Sources */,
 				85634AF11A05D7840090D457 /* LiveCollectionViewCell.m in Sources */,
+				1D7CFD841A5807700027150E /* NTVColor.m in Sources */,
 				85634AC91A05D5130090D457 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
