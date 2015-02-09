@@ -165,7 +165,7 @@
                                             <outlet property="liveImg" destination="kG3-hO-ORZ" id="ZMH-bC-tdw"/>
                                             <outlet property="redbtn" destination="8eE-fu-W43" id="e7Y-TM-BIt"/>
                                             <outlet property="title" destination="1AG-Km-D1D" id="zOO-y6-9mC"/>
-                                            <segue destination="91t-Ri-zlJ" kind="show" identifier="pushLivePlayer" id="eDf-kj-Cc1"/>
+                                            <segue destination="gb0-TP-e1b" kind="show" id="Mnr-W4-Zzf"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -250,13 +250,23 @@
             </objects>
             <point key="canvasLocation" x="1206" y="-326.25"/>
         </scene>
-        <!--AV Player View Controller-->
-        <scene sceneID="Myl-J5-DiR">
+        <!--Player View Controller-->
+        <scene sceneID="4YL-7C-SeW">
             <objects>
-                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="91t-Ri-zlJ" customClass="MyAVPlayerViewController" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DJb-ol-ZpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="gb0-TP-e1b" customClass="PlayerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xfo-hJ-TUn"/>
+                        <viewControllerLayoutGuide type="bottom" id="zIG-oB-tvh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sbQ-VQ-jRx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2oJ-Cz-Xbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1938" y="-326.25"/>
+            <point key="canvasLocation" x="1930.5" y="-330"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -595,7 +605,7 @@
                                                     <variation key="heightClass=regular-widthClass=compact" constant="8"/>
                                                 </constraint>
                                                 <constraint firstItem="slQ-wF-X6k" firstAttribute="centerY" secondItem="zZy-pL-eWV" secondAttribute="centerY" id="ZKz-VM-UIU"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="slQ-wF-X6k" secondAttribute="trailing" constant="32" id="ctW-0d-SKO"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="slQ-wF-X6k" secondAttribute="trailing" constant="30" id="ctW-0d-SKO"/>
                                                 <constraint firstItem="cBl-V9-Kea" firstAttribute="top" secondItem="zZy-pL-eWV" secondAttribute="topMargin" constant="3" id="kgq-UN-Tq3">
                                                     <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                                                 </constraint>
@@ -644,7 +654,7 @@
                                                 </switch>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="WCm-gK-0cO" secondAttribute="trailing" constant="31" id="4Dh-ft-8A6"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="WCm-gK-0cO" secondAttribute="trailing" constant="30" id="4Dh-ft-8A6"/>
                                                 <constraint firstItem="hR0-ZR-1GB" firstAttribute="leading" secondItem="z08-S2-mDe" secondAttribute="leadingMargin" id="9yy-cc-Cld">
                                                     <variation key="heightClass=regular-widthClass=compact" constant="9"/>
                                                 </constraint>

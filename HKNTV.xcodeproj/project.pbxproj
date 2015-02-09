@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D21B3591A88578300A7A2DA /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = 1D21B34B1A88578300A7A2DA /* LICENSE.md */; };
+		1D21B35A1A88578300A7A2DA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 1D21B34C1A88578300A7A2DA /* README.md */; };
+		1D21B35B1A88578300A7A2DA /* KeepAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D21B34F1A88578300A7A2DA /* KeepAttribute.m */; };
+		1D21B35C1A88578300A7A2DA /* KeepLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D21B3521A88578300A7A2DA /* KeepLayoutConstraint.m */; };
+		1D21B35D1A88578300A7A2DA /* KeepTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D21B3541A88578300A7A2DA /* KeepTypes.m */; };
+		1D21B35E1A88578300A7A2DA /* NSArray+KeepLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D21B3561A88578300A7A2DA /* NSArray+KeepLayout.m */; };
+		1D21B35F1A88578300A7A2DA /* UIView+KeepLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D21B3581A88578300A7A2DA /* UIView+KeepLayout.m */; };
+		1D21B3641A8857FA00A7A2DA /* NTVVideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D21B3611A8857FA00A7A2DA /* NTVVideoPlayerView.m */; };
+		1D21B3651A8857FA00A7A2DA /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D21B3631A8857FA00A7A2DA /* PlayerViewController.m */; };
+		1D21B3681A885A2100A7A2DA /* NTVSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D21B3671A885A2100A7A2DA /* NTVSize.m */; };
 		1D2C90901A490322006381F5 /* networktv_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2C908F1A490322006381F5 /* networktv_logo.png */; };
 		1D2E01F41A42A33400E0F8AB /* LIVE.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E01F31A42A33400E0F8AB /* LIVE.png */; };
 		1D2E01F61A42A5ED00E0F8AB /* redbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D2E01F51A42A5ED00E0F8AB /* redbutton.png */; };
@@ -85,6 +95,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D21B34B1A88578300A7A2DA /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		1D21B34C1A88578300A7A2DA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1D21B34E1A88578300A7A2DA /* KeepAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeepAttribute.h; sourceTree = "<group>"; };
+		1D21B34F1A88578300A7A2DA /* KeepAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeepAttribute.m; sourceTree = "<group>"; };
+		1D21B3501A88578300A7A2DA /* KeepLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeepLayout.h; sourceTree = "<group>"; };
+		1D21B3511A88578300A7A2DA /* KeepLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeepLayoutConstraint.h; sourceTree = "<group>"; };
+		1D21B3521A88578300A7A2DA /* KeepLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeepLayoutConstraint.m; sourceTree = "<group>"; };
+		1D21B3531A88578300A7A2DA /* KeepTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeepTypes.h; sourceTree = "<group>"; };
+		1D21B3541A88578300A7A2DA /* KeepTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeepTypes.m; sourceTree = "<group>"; };
+		1D21B3551A88578300A7A2DA /* NSArray+KeepLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+KeepLayout.h"; sourceTree = "<group>"; };
+		1D21B3561A88578300A7A2DA /* NSArray+KeepLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+KeepLayout.m"; sourceTree = "<group>"; };
+		1D21B3571A88578300A7A2DA /* UIView+KeepLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+KeepLayout.h"; sourceTree = "<group>"; };
+		1D21B3581A88578300A7A2DA /* UIView+KeepLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+KeepLayout.m"; sourceTree = "<group>"; };
+		1D21B3601A8857FA00A7A2DA /* NTVVideoPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTVVideoPlayerView.h; sourceTree = "<group>"; };
+		1D21B3611A8857FA00A7A2DA /* NTVVideoPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTVVideoPlayerView.m; sourceTree = "<group>"; };
+		1D21B3621A8857FA00A7A2DA /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		1D21B3631A8857FA00A7A2DA /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
+		1D21B3661A885A2100A7A2DA /* NTVSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTVSize.h; sourceTree = "<group>"; };
+		1D21B3671A885A2100A7A2DA /* NTVSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTVSize.m; sourceTree = "<group>"; };
 		1D2C908F1A490322006381F5 /* networktv_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = networktv_logo.png; sourceTree = "<group>"; };
 		1D2E01F31A42A33400E0F8AB /* LIVE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LIVE.png; sourceTree = "<group>"; };
 		1D2E01F51A42A5ED00E0F8AB /* redbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redbutton.png; sourceTree = "<group>"; };
@@ -185,6 +214,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D21B3481A8856A200A7A2DA /* player */ = {
+			isa = PBXGroup;
+			children = (
+				1D21B3601A8857FA00A7A2DA /* NTVVideoPlayerView.h */,
+				1D21B3611A8857FA00A7A2DA /* NTVVideoPlayerView.m */,
+				1D21B3621A8857FA00A7A2DA /* PlayerViewController.h */,
+				1D21B3631A8857FA00A7A2DA /* PlayerViewController.m */,
+			);
+			name = player;
+			sourceTree = "<group>";
+		};
+		1D21B3491A88575400A7A2DA /* third */ = {
+			isa = PBXGroup;
+			children = (
+				1D21B34A1A88578300A7A2DA /* KeepLayout */,
+			);
+			name = third;
+			sourceTree = "<group>";
+		};
+		1D21B34A1A88578300A7A2DA /* KeepLayout */ = {
+			isa = PBXGroup;
+			children = (
+				1D21B34B1A88578300A7A2DA /* LICENSE.md */,
+				1D21B34C1A88578300A7A2DA /* README.md */,
+				1D21B34D1A88578300A7A2DA /* Sources */,
+			);
+			path = KeepLayout;
+			sourceTree = "<group>";
+		};
+		1D21B34D1A88578300A7A2DA /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1D21B34E1A88578300A7A2DA /* KeepAttribute.h */,
+				1D21B34F1A88578300A7A2DA /* KeepAttribute.m */,
+				1D21B3501A88578300A7A2DA /* KeepLayout.h */,
+				1D21B3511A88578300A7A2DA /* KeepLayoutConstraint.h */,
+				1D21B3521A88578300A7A2DA /* KeepLayoutConstraint.m */,
+				1D21B3531A88578300A7A2DA /* KeepTypes.h */,
+				1D21B3541A88578300A7A2DA /* KeepTypes.m */,
+				1D21B3551A88578300A7A2DA /* NSArray+KeepLayout.h */,
+				1D21B3561A88578300A7A2DA /* NSArray+KeepLayout.m */,
+				1D21B3571A88578300A7A2DA /* UIView+KeepLayout.h */,
+				1D21B3581A88578300A7A2DA /* UIView+KeepLayout.m */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		1D30F0441A442C2300DAEE3D /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +275,8 @@
 			children = (
 				1D7CFD821A5807700027150E /* NTVColor.h */,
 				1D7CFD831A5807700027150E /* NTVColor.m */,
+				1D21B3661A885A2100A7A2DA /* NTVSize.h */,
+				1D21B3671A885A2100A7A2DA /* NTVSize.m */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -228,6 +306,7 @@
 		85634AC51A05D5130090D457 /* HKNTV */ = {
 			isa = PBXGroup;
 			children = (
+				1D21B3481A8856A200A7A2DA /* player */,
 				1D7CFD7A1A5803430027150E /* utils */,
 				1D30F0441A442C2300DAEE3D /* Settings */,
 				85634AF21A05DA100090D457 /* hktvdemopic */,
@@ -245,6 +324,7 @@
 				851ED8A21A072345007DB60F /* MyAVPlayerViewController.m */,
 				1D30F04E1A46951B00DAEE3D /* SettingsTableViewController.h */,
 				1D30F04F1A46951B00DAEE3D /* SettingsTableViewController.m */,
+				1D21B3491A88575400A7A2DA /* third */,
 			);
 			path = HKNTV;
 			sourceTree = "<group>";
@@ -482,14 +562,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D21B3651A8857FA00A7A2DA /* PlayerViewController.m in Sources */,
 				1D30F0501A46951B00DAEE3D /* SettingsTableViewController.m in Sources */,
 				85634ACC1A05D5130090D457 /* AppDelegate.m in Sources */,
 				851ED8A31A072345007DB60F /* MyAVPlayerViewController.m in Sources */,
+				1D21B35D1A88578300A7A2DA /* KeepTypes.m in Sources */,
+				1D21B3681A885A2100A7A2DA /* NTVSize.m in Sources */,
 				1D30F0471A442C5B00DAEE3D /* NetworkTableViewCell.m in Sources */,
 				85634ACF1A05D5130090D457 /* LiveViewController.m in Sources */,
+				1D21B35F1A88578300A7A2DA /* UIView+KeepLayout.m in Sources */,
 				85634AF11A05D7840090D457 /* LiveCollectionViewCell.m in Sources */,
+				1D21B35A1A88578300A7A2DA /* README.md in Sources */,
 				1D7CFD841A5807700027150E /* NTVColor.m in Sources */,
+				1D21B35C1A88578300A7A2DA /* KeepLayoutConstraint.m in Sources */,
+				1D21B3641A8857FA00A7A2DA /* NTVVideoPlayerView.m in Sources */,
 				85634AC91A05D5130090D457 /* main.m in Sources */,
+				1D21B35B1A88578300A7A2DA /* KeepAttribute.m in Sources */,
+				1D21B35E1A88578300A7A2DA /* NSArray+KeepLayout.m in Sources */,
+				1D21B3591A88578300A7A2DA /* LICENSE.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
