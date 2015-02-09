@@ -64,7 +64,6 @@
     [self setUpCollection];
     /* Create the refresh control */
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    //self.refreshControl = self.refreshControl;
     [refreshControl addTarget:self
                             action:@selector(handleRefresh:)
                   forControlEvents:UIControlEventValueChanged];
@@ -152,7 +151,7 @@
     
     cell.img.image = image;
     cell.title.text = title;
-    cell.title.textColor = NTVRed;
+    cell.title.textColor = NTVDarkBlue;
     
     return cell;
 };

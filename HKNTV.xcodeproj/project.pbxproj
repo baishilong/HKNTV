@@ -16,9 +16,19 @@
 		1D7CFD811A5806A70027150E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D7CFD801A5806A70027150E /* CoreGraphics.framework */; };
 		1D7CFD841A5807700027150E /* NTVColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7CFD831A5807700027150E /* NTVColor.m */; };
 		1D845A601A2710E000E1EED3 /* bear.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D845A5F1A2710E000E1EED3 /* bear.png */; };
+		1D8E45731A5933B40048945C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8E45721A5933B40048945C /* CoreData.framework */; };
 		1D8F2D081A25DFCB00B0F8FE /* product.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D8F2D061A25DFCB00B0F8FE /* product.jpg */; };
 		1D8F2D091A25DFCB00B0F8FE /* sunrising.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D8F2D071A25DFCB00B0F8FE /* sunrising.jpg */; };
 		1D8F2D0B1A25F9C600B0F8FE /* redmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D8F2D0A1A25F9C600B0F8FE /* redmark.png */; };
+		1DF546DF1A597DBA00DBC6D4 /* channel1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF546D61A597DBA00DBC6D4 /* channel1.png */; };
+		1DF546E01A597DBA00DBC6D4 /* channel2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF546D71A597DBA00DBC6D4 /* channel2.png */; };
+		1DF546E11A597DBA00DBC6D4 /* channel3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF546D81A597DBA00DBC6D4 /* channel3.png */; };
+		1DF546E21A597DBA00DBC6D4 /* channel4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF546D91A597DBA00DBC6D4 /* channel4.png */; };
+		1DF546E31A597DBA00DBC6D4 /* channel5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF546DA1A597DBA00DBC6D4 /* channel5.png */; };
+		1DF546E41A597DBA00DBC6D4 /* channel6.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF546DB1A597DBA00DBC6D4 /* channel6.png */; };
+		1DF546E51A597DBA00DBC6D4 /* channel7.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF546DC1A597DBA00DBC6D4 /* channel7.png */; };
+		1DF546E61A597DBA00DBC6D4 /* channel8.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF546DD1A597DBA00DBC6D4 /* channel8.png */; };
+		1DF546E71A597DBA00DBC6D4 /* channel9.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF546DE1A597DBA00DBC6D4 /* channel9.png */; };
 		851ED8A31A072345007DB60F /* MyAVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 851ED8A21A072345007DB60F /* MyAVPlayerViewController.m */; };
 		852F58CF1A17B5C700BD5939 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852F58CE1A17B5C700BD5939 /* CoreMedia.framework */; };
 		85634AC91A05D5130090D457 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85634AC81A05D5130090D457 /* main.m */; };
@@ -87,9 +97,19 @@
 		1D7CFD821A5807700027150E /* NTVColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTVColor.h; sourceTree = "<group>"; };
 		1D7CFD831A5807700027150E /* NTVColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTVColor.m; sourceTree = "<group>"; };
 		1D845A5F1A2710E000E1EED3 /* bear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bear.png; sourceTree = "<group>"; };
+		1D8E45721A5933B40048945C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		1D8F2D061A25DFCB00B0F8FE /* product.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = product.jpg; sourceTree = "<group>"; };
 		1D8F2D071A25DFCB00B0F8FE /* sunrising.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunrising.jpg; sourceTree = "<group>"; };
 		1D8F2D0A1A25F9C600B0F8FE /* redmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redmark.png; sourceTree = "<group>"; };
+		1DF546D61A597DBA00DBC6D4 /* channel1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = channel1.png; sourceTree = "<group>"; };
+		1DF546D71A597DBA00DBC6D4 /* channel2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = channel2.png; sourceTree = "<group>"; };
+		1DF546D81A597DBA00DBC6D4 /* channel3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = channel3.png; sourceTree = "<group>"; };
+		1DF546D91A597DBA00DBC6D4 /* channel4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = channel4.png; sourceTree = "<group>"; };
+		1DF546DA1A597DBA00DBC6D4 /* channel5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = channel5.png; sourceTree = "<group>"; };
+		1DF546DB1A597DBA00DBC6D4 /* channel6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = channel6.png; sourceTree = "<group>"; };
+		1DF546DC1A597DBA00DBC6D4 /* channel7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = channel7.png; sourceTree = "<group>"; };
+		1DF546DD1A597DBA00DBC6D4 /* channel8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = channel8.png; sourceTree = "<group>"; };
+		1DF546DE1A597DBA00DBC6D4 /* channel9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = channel9.png; sourceTree = "<group>"; };
 		851ED8A11A072345007DB60F /* MyAVPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAVPlayerViewController.h; sourceTree = "<group>"; };
 		851ED8A21A072345007DB60F /* MyAVPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAVPlayerViewController.m; sourceTree = "<group>"; };
 		852F58CE1A17B5C700BD5939 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -148,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D8E45731A5933B40048945C /* CoreData.framework in Frameworks */,
 				1D7CFD811A5806A70027150E /* CoreGraphics.framework in Frameworks */,
 				1D7CFD7F1A5805E80027150E /* UIKit.framework in Frameworks */,
 				852F58CF1A17B5C700BD5939 /* CoreMedia.framework in Frameworks */,
@@ -189,6 +210,7 @@
 				85634AE21A05D5140090D457 /* HKNTVTests */,
 				1D7CFD7E1A5805E80027150E /* UIKit.framework */,
 				1D7CFD801A5806A70027150E /* CoreGraphics.framework */,
+				1D8E45721A5933B40048945C /* CoreData.framework */,
 				852F58CE1A17B5C700BD5939 /* CoreMedia.framework */,
 				85634AC41A05D5130090D457 /* Products */,
 			);
@@ -256,6 +278,15 @@
 		85634AF21A05DA100090D457 /* hktvdemopic */ = {
 			isa = PBXGroup;
 			children = (
+				1DF546D61A597DBA00DBC6D4 /* channel1.png */,
+				1DF546D71A597DBA00DBC6D4 /* channel2.png */,
+				1DF546D81A597DBA00DBC6D4 /* channel3.png */,
+				1DF546D91A597DBA00DBC6D4 /* channel4.png */,
+				1DF546DA1A597DBA00DBC6D4 /* channel5.png */,
+				1DF546DB1A597DBA00DBC6D4 /* channel6.png */,
+				1DF546DC1A597DBA00DBC6D4 /* channel7.png */,
+				1DF546DD1A597DBA00DBC6D4 /* channel8.png */,
+				1DF546DE1A597DBA00DBC6D4 /* channel9.png */,
 				1D2C908F1A490322006381F5 /* networktv_logo.png */,
 				1D2E01F51A42A5ED00E0F8AB /* redbutton.png */,
 				1D2E01F31A42A33400E0F8AB /* LIVE.png */,
@@ -387,7 +418,10 @@
 				85634B1D1A05DA100090D457 /* 18.jpg in Resources */,
 				85634B191A05DA100090D457 /* 14.jpg in Resources */,
 				85634B151A05DA100090D457 /* 10.jpg in Resources */,
+				1DF546E61A597DBA00DBC6D4 /* channel8.png in Resources */,
+				1DF546DF1A597DBA00DBC6D4 /* channel1.png in Resources */,
 				1D8F2D091A25DFCB00B0F8FE /* sunrising.jpg in Resources */,
+				1DF546E21A597DBA00DBC6D4 /* channel4.png in Resources */,
 				1D2E01F41A42A33400E0F8AB /* LIVE.png in Resources */,
 				85634B181A05DA100090D457 /* 13.jpg in Resources */,
 				85634AD51A05D5130090D457 /* Main.storyboard in Resources */,
@@ -395,6 +429,7 @@
 				85634B211A05DA100090D457 /* 21.jpg in Resources */,
 				85634B251A05DA100090D457 /* 25.jpg in Resources */,
 				85634B171A05DA100090D457 /* 12.jpg in Resources */,
+				1DF546E01A597DBA00DBC6D4 /* channel2.png in Resources */,
 				85634B341A05DA100090D457 /* 9.jpg in Resources */,
 				85634B1A1A05DA100090D457 /* 15.jpg in Resources */,
 				85634B301A05DA100090D457 /* 5.jpg in Resources */,
@@ -405,9 +440,11 @@
 				85634B231A05DA100090D457 /* 23.jpg in Resources */,
 				85634B1B1A05DA100090D457 /* 16.jpg in Resources */,
 				85634B2E1A05DA100090D457 /* 33.jpg in Resources */,
+				1DF546E41A597DBA00DBC6D4 /* channel6.png in Resources */,
 				1D845A601A2710E000E1EED3 /* bear.png in Resources */,
 				1D2E01F61A42A5ED00E0F8AB /* redbutton.png in Resources */,
 				85634B1E1A05DA100090D457 /* 19.jpg in Resources */,
+				1DF546E31A597DBA00DBC6D4 /* channel5.png in Resources */,
 				85634B291A05DA100090D457 /* 29.jpg in Resources */,
 				85634B331A05DA100090D457 /* 8.jpg in Resources */,
 				85634B2C1A05DA100090D457 /* 31.jpg in Resources */,
@@ -416,6 +453,7 @@
 				85634B2A1A05DA100090D457 /* 3.jpg in Resources */,
 				85634B161A05DA100090D457 /* 11.jpg in Resources */,
 				85634B2D1A05DA100090D457 /* 32.jpg in Resources */,
+				1DF546E51A597DBA00DBC6D4 /* channel7.png in Resources */,
 				85634B1C1A05DA100090D457 /* 17.jpg in Resources */,
 				85634B321A05DA100090D457 /* 7.jpg in Resources */,
 				85634B241A05DA100090D457 /* 24.jpg in Resources */,
@@ -423,6 +461,8 @@
 				85634B1F1A05DA100090D457 /* 2.jpg in Resources */,
 				1D8F2D081A25DFCB00B0F8FE /* product.jpg in Resources */,
 				85634B221A05DA100090D457 /* 22.jpg in Resources */,
+				1DF546E11A597DBA00DBC6D4 /* channel3.png in Resources */,
+				1DF546E71A597DBA00DBC6D4 /* channel9.png in Resources */,
 				85634ADA1A05D5130090D457 /* LaunchScreen.xib in Resources */,
 				85634AD71A05D5130090D457 /* Images.xcassets in Resources */,
 			);
@@ -574,7 +614,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HKNTV/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -588,7 +628,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HKNTV/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
