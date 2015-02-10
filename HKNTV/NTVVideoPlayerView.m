@@ -1,9 +1,9 @@
 //
-//  ViewController.m
-//  TestAVPlayer
+//  NTVVideoPlayerView.m
+//  HKNTV
 //
-//  Created by Mike on 2014-05-07.
-//  Copyright (c) 2014 Mike. All rights reserved.
+//  Created by Jude on 2015-01-07.
+//  Copyright (c) 2015 HKNTV. All rights reserved.
 //
 
 #import "NTVVideoPlayerView.h"
