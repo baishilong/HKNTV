@@ -47,6 +47,7 @@
 		1D8F2D081A25DFCB00B0F8FE /* product.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D8F2D061A25DFCB00B0F8FE /* product.jpg */; };
 		1D8F2D091A25DFCB00B0F8FE /* sunrising.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D8F2D071A25DFCB00B0F8FE /* sunrising.jpg */; };
 		1D8F2D0B1A25F9C600B0F8FE /* redmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D8F2D0A1A25F9C600B0F8FE /* redmark.png */; };
+		1DF2A1211A89D42E009A8592 /* avplayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1DF2A1201A89D42E009A8592 /* avplayer.bundle */; };
 		1DF546DF1A597DBA00DBC6D4 /* channel1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF546D61A597DBA00DBC6D4 /* channel1.png */; };
 		1DF546E01A597DBA00DBC6D4 /* channel2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF546D71A597DBA00DBC6D4 /* channel2.png */; };
 		1DF546E11A597DBA00DBC6D4 /* channel3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DF546D81A597DBA00DBC6D4 /* channel3.png */; };
@@ -183,6 +184,7 @@
 		1D8F2D061A25DFCB00B0F8FE /* product.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = product.jpg; sourceTree = "<group>"; };
 		1D8F2D071A25DFCB00B0F8FE /* sunrising.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sunrising.jpg; sourceTree = "<group>"; };
 		1D8F2D0A1A25F9C600B0F8FE /* redmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redmark.png; sourceTree = "<group>"; };
+		1DF2A1201A89D42E009A8592 /* avplayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = avplayer.bundle; path = HKNTV/avplayer.bundle; sourceTree = "<group>"; };
 		1DF546D61A597DBA00DBC6D4 /* channel1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = channel1.png; sourceTree = "<group>"; };
 		1DF546D71A597DBA00DBC6D4 /* channel2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = channel2.png; sourceTree = "<group>"; };
 		1DF546D81A597DBA00DBC6D4 /* channel3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = channel3.png; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				85634AC51A05D5130090D457 /* HKNTV */,
+				1DF2A1201A89D42E009A8592 /* avplayer.bundle */,
 				85634AE21A05D5140090D457 /* HKNTVTests */,
 				1D7CFD7E1A5805E80027150E /* UIKit.framework */,
 				1D7CFD801A5806A70027150E /* CoreGraphics.framework */,
@@ -630,6 +633,7 @@
 				1D2E01F61A42A5ED00E0F8AB /* redbutton.png in Resources */,
 				85634B1E1A05DA100090D457 /* 19.jpg in Resources */,
 				1DF546E31A597DBA00DBC6D4 /* channel5.png in Resources */,
+				1DF2A1211A89D42E009A8592 /* avplayer.bundle in Resources */,
 				85634B291A05DA100090D457 /* 29.jpg in Resources */,
 				85634B331A05DA100090D457 /* 8.jpg in Resources */,
 				85634B2C1A05DA100090D457 /* 31.jpg in Resources */,
