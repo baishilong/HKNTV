@@ -106,8 +106,8 @@
     /* Create the refresh control */
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self
-                            action:@selector(handleRefresh:)
-                  forControlEvents:UIControlEventValueChanged];
+                       action:@selector(handleRefresh:)
+             forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
     self.liveCollection.alwaysBounceVertical = YES;
     [self.liveCollection addSubview:refreshControl];
@@ -119,13 +119,13 @@
         UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg",(long)index+1]];
         NSString *title = [NSString stringWithFormat:@"%@", self.names[index]];
         
-//        NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:3];
-//        [dic setObject:image forKey:@"image"];
-//        [dic setObject:title forKey:@"title"];
-//        [dic setObject:@false forKey:@"isLive"];
+        //        NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:3];
+        //        [dic setObject:image forKey:@"image"];
+        //        [dic setObject:title forKey:@"title"];
+        //        [dic setObject:@false forKey:@"isLive"];
         NSMutableDictionary * dic = [NSMutableDictionary
-                                       dictionaryWithObjects:@[image, title, @false]
-                                       forKeys:@[@"image",@"title",@"isLive"]];
+                                     dictionaryWithObjects:@[image, title, @false]
+                                     forKeys:@[@"image",@"title",@"isLive"]];
         
         if (index == 2 || index == 3) {
             dic[@"isLive"] = @true;
@@ -159,6 +159,7 @@
          on the screen so that the user will see the difference between
          the before and the after of the refresh */
         NSLog(@"refresh called");
+        [self requestCatergry];
         [self.refreshControl endRefreshing];
         
     });
@@ -168,13 +169,33 @@
 
 
 #pragma mark - Collection View Data Source
- 
 
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
     if(self.keys == nil){
         return 0;
     }
-    return [[[self.keys valueForKeyPath:@"data.columns.video_list"] objectAtIndex:0] count];
+//    NSLog(@"numberOfSectionsInTableView %lu", [[(unsigned long)[[self.keys valueForKeyPath:@"data.columns"] objectAtIndex:1] valueForKey:@"video_list"] count]);
+//    return [[self.keys valueForKeyPath:@"data.columns.video_list"] count];
+    return 8;
+}
+
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    if(self.keys == nil || section == nil){
+        return 0;
+    }
+    switch (section) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        default:
+            return [[[self.keys valueForKeyPath:@"data.columns.video_list"] objectAtIndex:section] count];
+            break;
+    }
+    return [[[self.keys valueForKeyPath:@"data.columns.video_list"] objectAtIndex:section] count];
 }
 
 
@@ -184,39 +205,84 @@
     }
     static NSString *collectionCellID = @"live_cell";
     HomeCollectionViewCell *cell = (HomeCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:collectionCellID forIndexPath:indexPath];
-
-    NSURL *url = [NSURL URLWithString:[[[[self.keys valueForKeyPath:@"data.columns.video_list"] objectAtIndex:0] objectAtIndex:indexPath.row] valueForKey:@"ver_common_pic"]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
-    NSDictionary *dic    = self.dataMArr[indexPath.row];
-    UIImage *image       = dic[@"image"];
-    NSString *title      = dic[@"title"];
-    
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    operation.responseSerializer = [AFImageResponseSerializer serializer];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        cell.img.image = (UIImage *) responseObject;
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        NSLog(@"Error: %@", error);
-    }];
-    [operation start];
-    
-
-    NSLog(@"index %ld", (long)indexPath.row);
-    if ([dic[@"isLive" ] isEqual: @false] ) {
-        cell.liveImg.hidden = YES;
-        cell.redbtn.hidden = YES;
-    }else{
-        cell.liveImg.hidden = NO;
-        cell.redbtn.hidden = NO;
+    switch (indexPath.section) {
+        case 0:
+        {
+            NSURL *url = [NSURL URLWithString:[[[[self.keys valueForKeyPath:@"data.columns.video_list"] objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] valueForKey:@"ver_common_pic"]];
+            NSURLRequest *request = [NSURLRequest requestWithURL:url];
+            
+            NSDictionary *dic    = self.dataMArr[indexPath.row];
+            UIImage *image       = dic[@"image"];
+            NSString *title      = dic[@"title"];
+            
+            AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+            operation.responseSerializer = [AFImageResponseSerializer serializer];
+            
+            [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+                cell.img.image = (UIImage *) responseObject;
+                
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                
+                NSLog(@"Error: %@", error);
+            }];
+            [operation start];
+            
+            
+//            NSLog(@"index %ld", (long)indexPath.row);
+//            if ([dic[@"isLive" ] isEqual: @false] ) {
+//                cell.liveImg.hidden = YES;
+//                cell.redbtn.hidden = YES;
+//            }else{
+//                cell.liveImg.hidden = NO;
+//                cell.redbtn.hidden = NO;
+//            }
+            
+            cell.img.image = image;
+            cell.title.text = title;
+            cell.title.textColor = NTVDarkBlue;
+        }
+            break;
+        case 1:
+        {
+            NSURL *url = [NSURL URLWithString:[[[[self.keys valueForKeyPath:@"data.columns.video_list"] objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] valueForKey:@"ver_common_pic"]];
+            NSURLRequest *request = [NSURLRequest requestWithURL:url];
+            
+            NSDictionary *dic    = self.dataMArr[indexPath.row];
+            UIImage *image       = dic[@"image"];
+            NSString *title      = dic[@"title"];
+            
+            AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+            operation.responseSerializer = [AFImageResponseSerializer serializer];
+            
+            [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+                cell.img.image = (UIImage *) responseObject;
+                
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                
+                NSLog(@"Error: %@", error);
+            }];
+            [operation start];
+            
+            
+            NSLog(@"index %ld", (long)indexPath.row);
+            if ([dic[@"isLive" ] isEqual: @false] ) {
+                cell.liveImg.hidden = YES;
+                cell.redbtn.hidden = YES;
+            }else{
+                cell.liveImg.hidden = NO;
+                cell.redbtn.hidden = NO;
+            }
+            
+            cell.img.image = image;
+            cell.title.text = title;
+            cell.title.textColor = NTVDarkBlue;
+        }
+            break;
+        default:
+            break;
     }
     
-    cell.img.image = image;
-    cell.title.text = title;
-    cell.title.textColor = NTVDarkBlue;
     
     return cell;
 };

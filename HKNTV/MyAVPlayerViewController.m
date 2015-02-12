@@ -23,7 +23,8 @@
     [self.urlArray addObject:[NSMutableString stringWithFormat:@"http://%@/duck/duck.m3u8", STREAM_SVR_IP]];
     [self.urlArray addObject:[NSMutableString stringWithFormat:@"http://%@/duck/duck.m3u8", STREAM_SVR_IP]];
     
-    [self.urlArray addObject:[NSMutableString stringWithFormat:@"http://192.168.1.160/samples/bhaj/hkntv,How.to.Train.Your.Dragon.2.aj_400K.m3u8"]];
+//    [self.urlArray addObject:[NSMutableString stringWithFormat:@"http://192.168.1.160/samples/bhaj/hkntv,How.to.Train.Your.Dragon.2.aj_400K.m3u8"]];
+    [self.urlArray addObject:[NSMutableString stringWithFormat:@"http://192.168.1.160/samples/vmaao/iaction,vmaao.m3u8"]];
 
 }
 

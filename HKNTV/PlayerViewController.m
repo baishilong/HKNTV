@@ -24,7 +24,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 //    self.player = [[KSVideoPlayerView alloc] initWithFrame:CGRectMake(0, 20, 320, 180) contentURL:[NSURL URLWithString:@"http://219.232.160.141:5080/hls/c64024e7cd451ac19613345704f985fa.m3u8"]];
-    self.player = [[NTVVideoPlayerView alloc] initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH , SCREEN_HEIGHT/3) contentURL:[NSURL URLWithString:@"http://192.168.1.160/vod/pva/bhmaaa/cell.m3u8"]];
+    self.player = [[NTVVideoPlayerView alloc] initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH , SCREEN_HEIGHT/3) contentURL:[NSURL URLWithString:@"http://192.168.1.160/samples/vmaao/iaction,vmaao.m3u8"]];
     [self.view addSubview:self.player];
     self.player.tintColor = [UIColor redColor];
     [self.player play];
