@@ -182,7 +182,7 @@
 
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    if(self.keys == nil || section == nil){
+    if(self.keys == nil){
         return 0;
     }
     switch (section) {
