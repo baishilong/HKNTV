@@ -14,6 +14,7 @@
 @property (strong, nonatomic)NSMutableArray *dataMArr;
 
 @property (assign, nonatomic) NSInteger selected_id;
+@property (assign, nonatomic) NSString *selected_str;
 
 @end
 

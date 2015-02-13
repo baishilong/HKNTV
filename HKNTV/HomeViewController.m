@@ -11,7 +11,7 @@
 #import "MyAVPlayerViewController.h"
 #import "NTVColor.h"
 #import "AFHTTPRequestOperation.h"
-
+#import "PlayerViewController.h"
 @interface HomeViewController ()
 
 @property (nonatomic,strong) NSMutableArray *names;
@@ -175,8 +175,8 @@
     if(self.keys == nil){
         return 0;
     }
-//    NSLog(@"numberOfSectionsInTableView %lu", [[(unsigned long)[[self.keys valueForKeyPath:@"data.columns"] objectAtIndex:1] valueForKey:@"video_list"] count]);
-//    return [[self.keys valueForKeyPath:@"data.columns.video_list"] count];
+    //    NSLog(@"numberOfSectionsInTableView %lu", [[(unsigned long)[[self.keys valueForKeyPath:@"data.columns"] objectAtIndex:1] valueForKey:@"video_list"] count]);
+    //    return [[self.keys valueForKeyPath:@"data.columns.video_list"] count];
     return 8;
 }
 
@@ -229,14 +229,14 @@
             [operation start];
             
             
-//            NSLog(@"index %ld", (long)indexPath.row);
-//            if ([dic[@"isLive" ] isEqual: @false] ) {
-//                cell.liveImg.hidden = YES;
-//                cell.redbtn.hidden = YES;
-//            }else{
-//                cell.liveImg.hidden = NO;
-//                cell.redbtn.hidden = NO;
-//            }
+            //            NSLog(@"index %ld", (long)indexPath.row);
+            //            if ([dic[@"isLive" ] isEqual: @false] ) {
+            //                cell.liveImg.hidden = YES;
+            //                cell.redbtn.hidden = YES;
+            //            }else{
+            //                cell.liveImg.hidden = NO;
+            //                cell.redbtn.hidden = NO;
+            //            }
             
             cell.img.image = image;
             cell.title.text = title;
@@ -295,14 +295,23 @@
 shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"selected %ld in live collection view", indexPath.row);
     self.selected_id = indexPath.row;
+    
+    NSString *desc       = [[[[self.keys valueForKeyPath:@"data.columns.video_list"] objectAtIndex:indexPath.section] objectAtIndex:indexPath.row] valueForKey:@"tv_desc"];
+    self.selected_str = desc;
     return YES;
 }
 
 #pragma mark - Others
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"pushLivePlayer"]){ MyAVPlayerViewController *playerController = segue.destinationViewController;
-        [playerController setProg_id:self.selected_id];
-    } }
+    //    if ([segue.identifier isEqualToString:@"pushLivePlayer"]){ MyAVPlayerViewController *playerController = segue.destinationViewController;
+    //        [playerController setProg_id:self.selected_id];
+    //        [playerController setProg_desc:self.selected_str];
+    //    }
+    if ([segue.identifier isEqualToString:@"push2DetailPage"]) {
+        PlayerViewController *playerController = segue.destinationViewController;
+        [playerController setProg_desc:self.selected_str];
+    }
+}
 
 @end

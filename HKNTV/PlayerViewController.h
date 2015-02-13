@@ -12,4 +12,13 @@
 
 @interface PlayerViewController : UIViewController <playerViewDelegate>
 
+@property (nonatomic, assign) NSString *prog_desc;
+@property (weak, nonatomic) IBOutlet UIButton *tab1;
+@property (weak, nonatomic) IBOutlet UIButton *tab2;
+@property (weak, nonatomic) IBOutlet UIButton *tab3;
+
+@property (strong, nonatomic) IBOutlet UIView *tab_detail_holder;
+@property (strong, nonatomic) IBOutlet UITextView *tab1_detailV;
+
+
 @end
