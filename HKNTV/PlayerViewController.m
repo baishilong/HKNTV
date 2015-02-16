@@ -10,12 +10,11 @@
 #import "PlayerViewController.h"
 #import "NTVVideoPlayerView.h"
 #import "NTVSize.h"
-
 @interface PlayerViewController ()
 
 @property (strong, nonatomic) NTVVideoPlayerView* player;
 @property (assign, nonatomic) NSInteger tab_detail_index;
-
+@property (assign, nonatomic) UIDeviceOrientation previous_orientation;
 @end
 
 @implementation PlayerViewController
@@ -41,6 +40,7 @@
     
     self.tab1_detailV = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, 400, 447)];
     self.tab1_detailV.text = self.prog_desc;
+    self.tab1_detailV.userInteractionEnabled = NO;
     
     UIView *tab2_detailV = [[UIView alloc]initWithFrame:CGRectMake(400, 0, 400, 447)];
     tab2_detailV.backgroundColor = [UIColor yellowColor];
@@ -82,13 +82,22 @@
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     
     [UIView animateWithDuration:duration animations:^{
+        
         if(UIDeviceOrientationIsLandscape(toInterfaceOrientation)) {
-            self.player.frame = CGRectMake(0, 0, self.view.frame.size.height, self.view.frame.size.width);
+            if (UIDeviceOrientationIsLandscape(self.previous_orientation)||self.player.isFullScreenMode) {
+                self.player.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+                
+            }else{
+                self.player.frame = CGRectMake(0, 0, self.view.frame.size.height, self.view.frame.size.width);
+            }
             self.tab_detail_holder.hidden = YES;
+            self.player.isFullScreenMode = YES;
+
         } else {
             self.player.frame = CGRectMake(0, 20, SCREEN_HEIGHT, SCREEN_WIDTH/3);
             self.tab_detail_holder.hidden = NO;
             [self.tab_detail_holder setFrame:CGRectMake(0, 304, 1200, 447)];
+            self.player.isFullScreenMode = NO;
             //            self.tab_detail_index = 0;
         }
     } completion:^(BOOL finished) {
@@ -231,10 +240,12 @@
 -(void)viewDidLayoutSubviews
 {
     //    NSLog(@"layout subviews called");
-    int width = self.view.frame.size.width;
-    int height = self.view.frame.size.height;
+//    int width = self.view.frame.size.width;
+//    int height = self.view.frame.size.height;
     
     //    NSLog(@"%d x %d",width, height);
+    
+    self.previous_orientation = [[UIDevice currentDevice] orientation];
 }
 
 - (void)didReceiveMemoryWarning
@@ -249,12 +260,35 @@
 {
     
     if (self.player.isFullScreenMode) {
-        //[self performOrientationChange:UIInterfaceOrientationLandscapeRight];
+        [self performOrientationChange:UIInterfaceOrientationPortrait];
+        self.player.isFullScreenMode = NO;
         NSLog(@"playerViewZoomButtonClicked: isFullScreenMode");
     } else {
-        //[self performOrientationChange:UIInterfaceOrientationPortrait];
+        [self performOrientationChange:UIInterfaceOrientationLandscapeRight];
+        self.player.isFullScreenMode = YES;
         NSLog(@"playerViewZoomButtonClicked");
     }
+}
+
+-(void)performOrientationChange:(UIInterfaceOrientation)toInterfaceOrientation{
+    
+//    [UIView animateWithDuration:0.5 animations:^{
+//        if(UIDeviceOrientationIsLandscape(toInterfaceOrientation)) {
+//            self.player.frame = CGRectMake(0, 0, self.view.frame.size.height, self.view.frame.size.width);
+//            self.tab_detail_holder.hidden = YES;
+//            
+//        } else {
+//            self.player.frame = CGRectMake(0, 20, SCREEN_HEIGHT, SCREEN_WIDTH/3);
+//            self.tab_detail_holder.hidden = NO;
+//            [self.tab_detail_holder setFrame:CGRectMake(0, 304, 1200, 447)];
+//            //            self.tab_detail_index = 0;
+//        }
+//    } completion:^(BOOL finished) {
+//        
+//    }];
+    NSNumber *value = [NSNumber numberWithInt:toInterfaceOrientation];
+    [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+    
 }
 
 -(void)playerFinishedPlayback:(NTVVideoPlayerView*)view
