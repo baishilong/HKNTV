@@ -8,9 +8,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NTVVideoPlayerView.h"
+//#import "NTVVideoPlayerView.h"
+#import "PrePlayerView.h"
 
-@interface PlayerViewController : UIViewController <playerViewDelegate>
+@interface PlayerViewController : UIViewController <prePlayerViewDelegate>
 
 @property (nonatomic, assign) NSString *prog_desc;
 @property (weak, nonatomic) IBOutlet UIButton *tab1;

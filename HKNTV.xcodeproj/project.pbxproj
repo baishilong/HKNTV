@@ -91,6 +91,8 @@
 		1D8E45731A5933B40048945C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8E45721A5933B40048945C /* CoreData.framework */; };
 		1DF2A1211A89D42E009A8592 /* avplayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1DF2A1201A89D42E009A8592 /* avplayer.bundle */; };
 		1DF2A1241A89E93C009A8592 /* MyAVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF2A1231A89E93C009A8592 /* MyAVPlayerViewController.m */; };
+		1F6E97FC1A91A1DA004A8F63 /* PrePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E97FB1A91A1DA004A8F63 /* PrePlayerView.m */; };
+		1F6E97FE1A91A1E8004A8F63 /* PrePlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F6E97FD1A91A1E8004A8F63 /* PrePlayerView.xib */; };
 		852F58CF1A17B5C700BD5939 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852F58CE1A17B5C700BD5939 /* CoreMedia.framework */; };
 		85634AC91A05D5130090D457 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85634AC81A05D5130090D457 /* main.m */; };
 		85634ACC1A05D5130090D457 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85634ACB1A05D5130090D457 /* AppDelegate.m */; };
@@ -229,6 +231,9 @@
 		1DF2A1201A89D42E009A8592 /* avplayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = avplayer.bundle; path = HKNTV/avplayer.bundle; sourceTree = "<group>"; };
 		1DF2A1221A89E93C009A8592 /* MyAVPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAVPlayerViewController.h; sourceTree = "<group>"; };
 		1DF2A1231A89E93C009A8592 /* MyAVPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAVPlayerViewController.m; sourceTree = "<group>"; };
+		1F6E97FA1A91A1DA004A8F63 /* PrePlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrePlayerView.h; sourceTree = "<group>"; };
+		1F6E97FB1A91A1DA004A8F63 /* PrePlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrePlayerView.m; sourceTree = "<group>"; };
+		1F6E97FD1A91A1E8004A8F63 /* PrePlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrePlayerView.xib; sourceTree = "<group>"; };
 		852F58CE1A17B5C700BD5939 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		85634AC31A05D5130090D457 /* HKNTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HKNTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85634AC71A05D5130090D457 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -276,6 +281,9 @@
 				1D21B3611A8857FA00A7A2DA /* NTVVideoPlayerView.m */,
 				1D21B3621A8857FA00A7A2DA /* PlayerViewController.h */,
 				1D21B3631A8857FA00A7A2DA /* PlayerViewController.m */,
+				1F6E97FA1A91A1DA004A8F63 /* PrePlayerView.h */,
+				1F6E97FB1A91A1DA004A8F63 /* PrePlayerView.m */,
+				1F6E97FD1A91A1E8004A8F63 /* PrePlayerView.xib */,
 			);
 			name = player;
 			sourceTree = "<group>";
@@ -572,6 +580,7 @@
 					};
 					85634ADE1A05D5140090D457 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = D7V6XM2BFG;
 						TestTargetID = 85634AC21A05D5130090D457;
 					};
 				};
@@ -637,6 +646,7 @@
 				85634AD71A05D5130090D457 /* Images.xcassets in Resources */,
 				1D26A1551A8C950800A960BF /* 10.jpg in Resources */,
 				1D26A15E1A8C950800A960BF /* 19.jpg in Resources */,
+				1F6E97FE1A91A1E8004A8F63 /* PrePlayerView.xib in Resources */,
 				1D26A1561A8C950800A960BF /* 11.jpg in Resources */,
 				1D26A1641A8C950800A960BF /* 24.jpg in Resources */,
 				1D26A16B1A8C950800A960BF /* 30.jpg in Resources */,
@@ -687,6 +697,7 @@
 				1D21B3981A88BB5100A7A2DA /* AFNetworkActivityIndicatorManager.m in Sources */,
 				85634AF11A05D7840090D457 /* HomeCollectionViewCell.m in Sources */,
 				1D21B39F1A88BB5100A7A2DA /* UIWebView+AFNetworking.m in Sources */,
+				1F6E97FC1A91A1DA004A8F63 /* PrePlayerView.m in Sources */,
 				1D21B3911A88BB5100A7A2DA /* AFHTTPSessionManager.m in Sources */,
 				1D21B35A1A88578300A7A2DA /* README.md in Sources */,
 				1D7CFD841A5807700027150E /* NTVColor.m in Sources */,
@@ -763,6 +774,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -804,6 +816,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;

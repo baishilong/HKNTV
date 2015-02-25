@@ -8,13 +8,16 @@
 //
 
 #import "PlayerViewController.h"
-#import "NTVVideoPlayerView.h"
+//#import "NTVVideoPlayerView.h"
 #import "NTVSize.h"
+#import "PrePlayerView.h"
 @interface PlayerViewController ()
 
-@property (strong, nonatomic) NTVVideoPlayerView* player;
+//@property (strong, nonatomic) NTVVideoPlayerView* player;
 @property (assign, nonatomic) NSInteger tab_detail_index;
 @property (assign, nonatomic) UIDeviceOrientation previous_orientation;
+@property (strong, nonatomic) PrePlayerView *pre_player;
+
 @end
 
 @implementation PlayerViewController
@@ -26,19 +29,26 @@
     //    self.player = [[KSVideoPlayerView alloc] initWithFrame:CGRectMake(0, 20, 320, 180) contentURL:[NSURL URLWithString:@"http://219.232.160.141:5080/hls/c64024e7cd451ac19613345704f985fa.m3u8"]];
     //    self.player = [[NTVVideoPlayerView alloc] initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH , SCREEN_HEIGHT/3) contentURL:[NSURL URLWithString:@"http://192.168.1.160/samples/bhaj/hkntv,How.to.Train.Your.Dragon.2.aj_400K.m3u8"]];
     
-    self.player = [[NTVVideoPlayerView alloc] initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH , SCREEN_HEIGHT/3) contentURL:[NSURL URLWithString:@"http://219.232.160.141:5080/hls/c64024e7cd451ac19613345704f985fa.m3u8"]];
+//    self.pre_player = [[PrePlayerView alloc] initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH , SCREEN_HEIGHT/3) contentURL:[NSURL URLWithString:@"http://219.232.160.141:5080/hls/c64024e7cd451ac19613345704f985fa.m3u8"]];
     
-    [self.view addSubview:self.player];
-    self.player.tintColor = [UIColor redColor];
-    [self.player play];
-    [self.player setDelegate:self];
+//    [self.view addSubview:self.pre_player];
+//    self.player.tintColor = [UIColor redColor];
+//    [self.player play];
+//    [self.player setDelegate:self];
     
-    //    self.tab1_detailV.text = self.prog_desc;
+    self.pre_player = [[[NSBundle mainBundle]loadNibNamed:@"PrePlayerView" owner:self options:nil]lastObject];
+    [self.pre_player setAutoresizingMask:UIViewAutoresizingNone];
+    [self.pre_player initConfigrationWithFrame:CGRectMake(0, 20, SCREEN_WIDTH , SCREEN_HEIGHT/3) ContentURL:[NSURL URLWithString:@"http://219.232.160.141:5080/hls/c64024e7cd451ac19613345704f985fa.m3u8"]];
+    [self.pre_player play];
+    [self.pre_player setDelegate:self];
+    [self.view addSubview:self.pre_player];
+    
+    self.tab1_detailV.text = self.prog_desc;
     self.tab_detail_index = 0;
     
     self.tab_detail_holder = [[UIView alloc]initWithFrame:CGRectMake(0, 294, 1200, 447)];
     
-    self.tab1_detailV = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, 400, 447)];
+    self.tab1_detailV = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, 337.5, 447)];
     self.tab1_detailV.text = self.prog_desc;
     self.tab1_detailV.userInteractionEnabled = NO;
     
@@ -70,39 +80,44 @@
     
 }
 
-//-(void)viewWillAppear:(BOOL)animated{
-//    [super viewWillAppear:animated];
-//
-//    [self.tab1 setFrame:CGRectMake(0, SCREEN_HEIGHT/3, SCREEN_WIDTH/3, 30)];
-//    [self.tab1 setFrame:CGRectMake(SCREEN_WIDTH/3, SCREEN_HEIGHT/3, SCREEN_WIDTH/3, 30)];
-//    [self.tab1 setFrame:CGRectMake(SCREEN_WIDTH*2/3, SCREEN_HEIGHT/3, SCREEN_WIDTH/3, 30)];
-//    [self.view.layer setNeedsLayout];
-//}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+
+    [self.tab1 setFrame:CGRectMake(0, SCREEN_HEIGHT/3, SCREEN_WIDTH/3, 30)];
+    [self.tab1 setFrame:CGRectMake(SCREEN_WIDTH/3, SCREEN_HEIGHT/3, SCREEN_WIDTH/3, 30)];
+    [self.tab1 setFrame:CGRectMake(SCREEN_WIDTH*2/3, SCREEN_HEIGHT/3, SCREEN_WIDTH/3, 30)];
+    [self.view.layer setNeedsLayout];
+}
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     
     [UIView animateWithDuration:duration animations:^{
         
         if(UIDeviceOrientationIsLandscape(toInterfaceOrientation)) {
-            if (UIDeviceOrientationIsLandscape(self.previous_orientation)||self.player.isFullScreenMode) {
-                self.player.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-                
+            if (UIDeviceOrientationIsLandscape(self.previous_orientation)||self.pre_player.isFullScreenMode) {
+                self.pre_player.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
             }else{
-                self.player.frame = CGRectMake(0, 0, self.view.frame.size.height, self.view.frame.size.width);
+                self.pre_player.frame = CGRectMake(0, 0, SCREEN_HEIGHT, SCREEN_WIDTH);
             }
             self.tab_detail_holder.hidden = YES;
-            self.player.isFullScreenMode = YES;
+            self.pre_player.isFullScreenMode = YES;
+            [self.pre_player.zoomButton setSelected:YES];
 
         } else {
-            self.player.frame = CGRectMake(0, 20, SCREEN_HEIGHT, SCREEN_WIDTH/3);
+            self.pre_player.frame = CGRectMake(0,20, SCREEN_HEIGHT,SCREEN_WIDTH/3);
+            self.pre_player.isFullScreenMode = NO;
+            [self.pre_player.zoomButton setSelected:NO];
             self.tab_detail_holder.hidden = NO;
             [self.tab_detail_holder setFrame:CGRectMake(0, 304, 1200, 447)];
-            self.player.isFullScreenMode = NO;
-            //            self.tab_detail_index = 0;
+        
         }
     } completion:^(BOOL finished) {
-        
+        NSLog(@"%f,%f,%f,%f",self.pre_player.frame.origin.x,self.pre_player.frame.origin.y,self.pre_player.frame.size.width,self.pre_player.frame.size.height);
     }];
+    
+    
+    
+    
 }
 
 -(IBAction)didSwitchTab:(UIButton*)sender{
@@ -123,7 +138,7 @@
                                                                     current.size.width,
                                                                     current.size.height)];
                     } completion:^(BOOL finished) {
-                        //                            self.tab_detail_index = 1;
+                        
                     }];
                     
                     break;
@@ -137,7 +152,7 @@
                                                                     current.size.width,
                                                                     current.size.height)];
                     } completion:^(BOOL finished) {
-                        //                            self.tab_detail_index = 2;
+                     
                     }];
                     
                     break;
@@ -161,7 +176,7 @@
                                                                     current.size.width,
                                                                     current.size.height)];
                     } completion:^(BOOL finished) {
-                        //                            self.tab_detail_index = 0;
+
                     }];
                     
                     break;
@@ -178,7 +193,7 @@
                                                                     current.size.width,
                                                                     current.size.height)];
                     } completion:^(BOOL finished) {
-                        //                            self.tab_detail_index = 2;
+                       
                     }];
                     
                     break;
@@ -200,7 +215,7 @@
                                                                     current.size.width,
                                                                     current.size.height)];
                     } completion:^(BOOL finished) {
-                        //                            self.tab_detail_index = 0   ;
+                      
                     }];
                     
                     break;
@@ -214,7 +229,7 @@
                                                                     current.size.width,
                                                                     current.size.height)];
                     } completion:^(BOOL finished) {
-                        //                            self.tab_detail_index = 1;
+                      
                     }];
                     
                     break;
@@ -239,12 +254,6 @@
 
 -(void)viewDidLayoutSubviews
 {
-    //    NSLog(@"layout subviews called");
-//    int width = self.view.frame.size.width;
-//    int height = self.view.frame.size.height;
-    
-    //    NSLog(@"%d x %d",width, height);
-    
     self.previous_orientation = [[UIDevice currentDevice] orientation];
 }
 
@@ -254,47 +263,31 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark playerViewDelegate
+#pragma mark preplayerViewDelegate
 
--(void)playerViewZoomButtonClicked:(NTVVideoPlayerView*)view
-{
-    
-    if (self.player.isFullScreenMode) {
+-(void)prePlayerViewZoomButtonClicked:(PrePlayerView *)view{
+    if (self.pre_player.isFullScreenMode) {
         [self performOrientationChange:UIInterfaceOrientationPortrait];
-        self.player.isFullScreenMode = NO;
+        self.pre_player.isFullScreenMode = NO;
         NSLog(@"playerViewZoomButtonClicked: isFullScreenMode");
     } else {
         [self performOrientationChange:UIInterfaceOrientationLandscapeRight];
-        self.player.isFullScreenMode = YES;
+        self.pre_player.isFullScreenMode = YES;
         NSLog(@"playerViewZoomButtonClicked");
     }
 }
 
 -(void)performOrientationChange:(UIInterfaceOrientation)toInterfaceOrientation{
-    
-//    [UIView animateWithDuration:0.5 animations:^{
-//        if(UIDeviceOrientationIsLandscape(toInterfaceOrientation)) {
-//            self.player.frame = CGRectMake(0, 0, self.view.frame.size.height, self.view.frame.size.width);
-//            self.tab_detail_holder.hidden = YES;
-//            
-//        } else {
-//            self.player.frame = CGRectMake(0, 20, SCREEN_HEIGHT, SCREEN_WIDTH/3);
-//            self.tab_detail_holder.hidden = NO;
-//            [self.tab_detail_holder setFrame:CGRectMake(0, 304, 1200, 447)];
-//            //            self.tab_detail_index = 0;
-//        }
-//    } completion:^(BOOL finished) {
-//        
-//    }];
+
     NSNumber *value = [NSNumber numberWithInt:toInterfaceOrientation];
     [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
     
 }
 
--(void)playerFinishedPlayback:(NTVVideoPlayerView*)view
-{
-    NSLog(@"playerFinishedPlayback");
-}
+//-(void)playerFinishedPlayback:(NTVVideoPlayerView*)view
+//{
+//    NSLog(@"playerFinishedPlayback");
+//}
 
 #pragma mark -Orientation
 

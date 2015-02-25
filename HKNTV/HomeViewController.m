@@ -37,7 +37,7 @@
         
         // 3
         self.keys = (NSArray *)responseObject;
-        self.title = @"JSON Retrieved";
+//        self.title = @"JSON Retrieved";
         [self.liveCollection reloadData];
         NSLog(@"JSON Retrieved");
         
