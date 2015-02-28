@@ -25,20 +25,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    //    self.player = [[KSVideoPlayerView alloc] initWithFrame:CGRectMake(0, 20, 320, 180) contentURL:[NSURL URLWithString:@"http://219.232.160.141:5080/hls/c64024e7cd451ac19613345704f985fa.m3u8"]];
-    //    self.player = [[NTVVideoPlayerView alloc] initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH , SCREEN_HEIGHT/3) contentURL:[NSURL URLWithString:@"http://192.168.1.160/samples/bhaj/hkntv,How.to.Train.Your.Dragon.2.aj_400K.m3u8"]];
-    
-//    self.pre_player = [[PrePlayerView alloc] initWithFrame:CGRectMake(0, 20, SCREEN_WIDTH , SCREEN_HEIGHT/3) contentURL:[NSURL URLWithString:@"http://219.232.160.141:5080/hls/c64024e7cd451ac19613345704f985fa.m3u8"]];
-    
-//    [self.view addSubview:self.pre_player];
-//    self.player.tintColor = [UIColor redColor];
-//    [self.player play];
-//    [self.player setDelegate:self];
     
     self.pre_player = [[[NSBundle mainBundle]loadNibNamed:@"PrePlayerView" owner:self options:nil]lastObject];
     [self.pre_player setAutoresizingMask:UIViewAutoresizingNone];
-    [self.pre_player initConfigrationWithFrame:CGRectMake(0, 20, SCREEN_WIDTH , SCREEN_HEIGHT/3) ContentURL:[NSURL URLWithString:@"http://219.232.160.141:5080/hls/c64024e7cd451ac19613345704f985fa.m3u8"]];
+    [self.pre_player initConfigrationWithFrame:CGRectMake(0, 20, SCREEN_WIDTH , SCREEN_HEIGHT/3) ContentURL:[NSURL URLWithString:@"http://192.168.1.160/vod/pva/bhmaaa/cell.m3u8"]];
+//    [self.pre_player initConfigrationWithFrame:CGRectMake(0, 20, SCREEN_WIDTH , SCREEN_HEIGHT/3) ContentURL:[NSURL URLWithString:@"http://54.187.162.118/tos/tos.m3u8"]];
     [self.pre_player play];
     [self.pre_player setDelegate:self];
     [self.view addSubview:self.pre_player];
@@ -109,15 +100,29 @@
             [self.pre_player.zoomButton setSelected:NO];
             self.tab_detail_holder.hidden = NO;
             [self.tab_detail_holder setFrame:CGRectMake(0, 304, 1200, 447)];
+            
         
         }
     } completion:^(BOOL finished) {
         NSLog(@"%f,%f,%f,%f",self.pre_player.frame.origin.x,self.pre_player.frame.origin.y,self.pre_player.frame.size.width,self.pre_player.frame.size.height);
     }];
+}
+
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+    [self.pre_player.CCSelection setHidden:YES];
+    [self.pre_player.AudioSelection setHidden:YES];
     
+    [self.pre_player.CCSelection setFrame:CGRectMake(self.pre_player.CC.frame.origin.x,
+                                                     SCREEN_HEIGHT-30,
+                                                     MEDIA_OPTION_BUTTON_WIDTH,
+                                                     MEDIA_OPTION_BUTTON_HEIGHT *10)];
     
-    
-    
+    [self.pre_player.AudioSelection setFrame:CGRectMake(self.pre_player.Audio.frame.origin.x,
+                                                       SCREEN_HEIGHT-30,
+                                                        MEDIA_OPTION_BUTTON_WIDTH,
+                                                        MEDIA_OPTION_BUTTON_HEIGHT *10)];
+    [self.pre_player initMediaOptionButtons];
+
 }
 
 -(IBAction)didSwitchTab:(UIButton*)sender{

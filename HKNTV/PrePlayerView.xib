@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZmC-Ov-Cgi">
+                <view opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZmC-Ov-Cgi">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Scf-Ur-vcl">
@@ -75,9 +75,13 @@
                         </button>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="LP3-7z-hAN">
                             <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
-                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                <rect key="frame" x="89" y="0.0" width="118" height="31"/>
+                            <variation key="heightClass=compact" misplaced="YES">
+                                <rect key="frame" x="35" y="1" width="380" height="31"/>
                             </variation>
+                            <connections>
+                                <action selector="progressBarChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="Xhg-Mf-YTv"/>
+                                <action selector="proressBarChangeEnded:" destination="iN0-l3-epB" eventType="touchUpInside" id="Yuz-y9-niF"/>
+                            </connections>
                         </slider>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcq-Nn-evs">
                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -92,13 +96,13 @@
                                     <exclude reference="9Cx-cT-MXu"/>
                                 </mask>
                             </variation>
-                            <variation key="heightClass=compact">
+                            <variation key="heightClass=compact" misplaced="YES">
+                                <rect key="frame" x="410" y="8" width="31" height="15.5"/>
                                 <mask key="constraints">
                                     <include reference="9Cx-cT-MXu"/>
                                 </mask>
                             </variation>
-                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                <rect key="frame" x="284" y="5" width="42" height="21"/>
+                            <variation key="heightClass=regular-widthClass=compact">
                                 <mask key="constraints">
                                     <include reference="9Cx-cT-MXu"/>
                                 </mask>
@@ -122,26 +126,80 @@
                                     <include reference="KTR-Eh-aLC"/>
                                 </mask>
                             </variation>
-                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                <rect key="frame" x="18" y="5" width="42" height="21"/>
+                            <variation key="heightClass=regular-widthClass=compact">
                                 <mask key="constraints">
                                     <include reference="KTR-Eh-aLC"/>
                                 </mask>
                             </variation>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TlK-GN-GR0">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="TlK-GN-GR0" secondAttribute="height" multiplier="22:15" id="Swl-o5-OiH"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="CC">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Swl-o5-OiH"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=compact" misplaced="YES">
+                                <rect key="frame" x="445" y="1" width="44" height="30"/>
+                                <mask key="constraints">
+                                    <include reference="Swl-o5-OiH"/>
+                                </mask>
+                            </variation>
+                            <connections>
+                                <action selector="touchCloseCaption:" destination="iN0-l3-epB" eventType="touchUpInside" id="Bsc-Qr-LkT"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1XN-Pk-cCy">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="1XN-Pk-cCy" secondAttribute="height" multiplier="22:15" id="Cw1-Ws-qxL"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <state key="normal" title="Audio">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Cw1-Ws-qxL"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=compact" misplaced="YES">
+                                <rect key="frame" x="488" y="1" width="44" height="30"/>
+                                <mask key="constraints">
+                                    <include reference="Cw1-Ws-qxL"/>
+                                </mask>
+                            </variation>
+                            <connections>
+                                <action selector="touchAduioTrack:" destination="iN0-l3-epB" eventType="touchUpInside" id="zze-pb-1Qt"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                     <constraints>
+                        <constraint firstAttribute="centerY" secondItem="1XN-Pk-cCy" secondAttribute="centerY" id="1y4-Fl-D3M"/>
+                        <constraint firstItem="TlK-GN-GR0" firstAttribute="leading" secondItem="Bcq-Nn-evs" secondAttribute="trailing" constant="3" id="4At-lj-lqq"/>
+                        <constraint firstItem="CKu-6r-aG3" firstAttribute="leading" secondItem="1XN-Pk-cCy" secondAttribute="trailing" constant="3" id="9YL-gN-eWg"/>
                         <constraint firstItem="Bcq-Nn-evs" firstAttribute="leading" secondItem="LP3-7z-hAN" secondAttribute="trailing" constant="3" id="9tg-yn-g1h"/>
                         <constraint firstItem="Scf-Ur-vcl" firstAttribute="leading" secondItem="CKu-6r-aG3" secondAttribute="trailing" constant="10" id="BWn-j4-ew3">
                             <variation key="heightClass=compact" constant="20"/>
                         </constraint>
                         <constraint firstItem="CKu-6r-aG3" firstAttribute="leading" secondItem="Bcq-Nn-evs" secondAttribute="trailing" constant="3" id="FcZ-SB-fdD"/>
                         <constraint firstItem="LP3-7z-hAN" firstAttribute="leading" secondItem="pxd-zR-p0h" secondAttribute="trailing" constant="3" id="JlN-pn-mfr"/>
+                        <constraint firstAttribute="centerY" secondItem="TlK-GN-GR0" secondAttribute="centerY" id="Lux-qD-epL"/>
                         <constraint firstAttribute="centerY" secondItem="pxd-zR-p0h" secondAttribute="centerY" id="To4-DM-12E"/>
                         <constraint firstItem="pxd-zR-p0h" firstAttribute="leading" secondItem="ZmC-Ov-Cgi" secondAttribute="leading" constant="3" id="VjV-Iz-vx7"/>
                         <constraint firstAttribute="centerY" secondItem="Scf-Ur-vcl" secondAttribute="centerY" id="Zni-zW-FxU"/>
                         <constraint firstAttribute="centerY" secondItem="CKu-6r-aG3" secondAttribute="centerY" id="iK9-tl-RVt"/>
+                        <constraint firstItem="1XN-Pk-cCy" firstAttribute="leading" secondItem="TlK-GN-GR0" secondAttribute="trailing" constant="3" id="lQc-m2-n1p"/>
                         <constraint firstAttribute="trailing" secondItem="Scf-Ur-vcl" secondAttribute="trailing" constant="3" id="ugk-lN-bBX"/>
                         <constraint firstAttribute="centerY" secondItem="LP3-7z-hAN" secondAttribute="centerY" id="vRn-fB-4BT"/>
                         <constraint firstAttribute="height" constant="32" id="wrn-8s-l8C"/>
@@ -154,48 +212,61 @@
                             <exclude reference="LP3-7z-hAN"/>
                             <exclude reference="Bcq-Nn-evs"/>
                             <exclude reference="pxd-zR-p0h"/>
+                            <exclude reference="TlK-GN-GR0"/>
+                            <exclude reference="1XN-Pk-cCy"/>
                         </mask>
                         <mask key="constraints">
                             <exclude reference="wrn-8s-l8C"/>
+                            <exclude reference="9tg-yn-g1h"/>
+                            <exclude reference="yxa-7L-11P"/>
                             <exclude reference="To4-DM-12E"/>
                             <exclude reference="VjV-Iz-vx7"/>
                             <exclude reference="JlN-pn-mfr"/>
                             <exclude reference="vRn-fB-4BT"/>
-                            <exclude reference="9tg-yn-g1h"/>
-                            <exclude reference="yxa-7L-11P"/>
+                            <exclude reference="1y4-Fl-D3M"/>
+                            <exclude reference="lQc-m2-n1p"/>
+                            <exclude reference="9YL-gN-eWg"/>
                             <exclude reference="FcZ-SB-fdD"/>
                             <exclude reference="iK9-tl-RVt"/>
                             <exclude reference="BWn-j4-ew3"/>
                             <exclude reference="Zni-zW-FxU"/>
                             <exclude reference="ugk-lN-bBX"/>
+                            <exclude reference="4At-lj-lqq"/>
+                            <exclude reference="Lux-qD-epL"/>
                         </mask>
                     </variation>
                     <variation key="heightClass=compact" misplaced="YES">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="24"/>
+                        <rect key="frame" x="0.0" y="350" width="600" height="24"/>
                         <mask key="subviews">
                             <include reference="Scf-Ur-vcl"/>
                             <include reference="CKu-6r-aG3"/>
                             <include reference="LP3-7z-hAN"/>
                             <include reference="Bcq-Nn-evs"/>
                             <include reference="pxd-zR-p0h"/>
+                            <include reference="TlK-GN-GR0"/>
+                            <include reference="1XN-Pk-cCy"/>
                         </mask>
                         <mask key="constraints">
                             <include reference="wrn-8s-l8C"/>
+                            <include reference="9tg-yn-g1h"/>
+                            <include reference="yxa-7L-11P"/>
                             <include reference="To4-DM-12E"/>
                             <include reference="VjV-Iz-vx7"/>
                             <include reference="JlN-pn-mfr"/>
                             <include reference="vRn-fB-4BT"/>
-                            <include reference="9tg-yn-g1h"/>
-                            <include reference="yxa-7L-11P"/>
-                            <include reference="FcZ-SB-fdD"/>
+                            <include reference="1y4-Fl-D3M"/>
+                            <include reference="lQc-m2-n1p"/>
+                            <include reference="9YL-gN-eWg"/>
                             <include reference="iK9-tl-RVt"/>
                             <include reference="BWn-j4-ew3"/>
                             <include reference="Zni-zW-FxU"/>
                             <include reference="ugk-lN-bBX"/>
+                            <include reference="4At-lj-lqq"/>
+                            <include reference="Lux-qD-epL"/>
                         </mask>
                     </variation>
                     <variation key="widthClass=compact" ambiguous="YES">
-                        <rect key="frame" x="0.0" y="152" width="400" height="30"/>
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                     </variation>
                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                         <rect key="frame" x="0.0" y="200" width="400" height="32"/>
@@ -208,12 +279,12 @@
                         </mask>
                         <mask key="constraints">
                             <include reference="wrn-8s-l8C"/>
+                            <include reference="9tg-yn-g1h"/>
+                            <include reference="yxa-7L-11P"/>
                             <include reference="To4-DM-12E"/>
                             <include reference="VjV-Iz-vx7"/>
                             <include reference="JlN-pn-mfr"/>
                             <include reference="vRn-fB-4BT"/>
-                            <include reference="9tg-yn-g1h"/>
-                            <include reference="yxa-7L-11P"/>
                             <include reference="FcZ-SB-fdD"/>
                             <include reference="iK9-tl-RVt"/>
                             <include reference="BWn-j4-ew3"/>
@@ -225,22 +296,366 @@
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                     </variation>
                 </view>
+                <view opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j8N-lV-Fo2">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spn-WZ-hMf">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=compact" fixedFrame="YES">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                <rect key="frame" x="0.0" y="0.0" width="44" height="30"/>
+                            </variation>
+                            <connections>
+                                <action selector="updateAudio:" destination="iN0-l3-epB" eventType="touchUpInside" id="rTH-Qf-SI2"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" alpha="0.69999999999999996" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kzo-XQ-rcY">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=compact" fixedFrame="YES">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                <rect key="frame" x="0.0" y="30" width="44" height="30"/>
+                            </variation>
+                            <connections>
+                                <action selector="updateAudio:" destination="iN0-l3-epB" eventType="touchUpInside" id="vKY-vr-cZ7"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" alpha="0.69999999999999996" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T03-ti-Jrd">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=compact" fixedFrame="YES">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                <rect key="frame" x="0.0" y="60" width="44" height="30"/>
+                            </variation>
+                            <connections>
+                                <action selector="updateAudio:" destination="iN0-l3-epB" eventType="touchUpInside" id="ohZ-71-Hxh"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" alpha="0.69999999999999996" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfa-gP-3SU">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=compact" fixedFrame="YES">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                <rect key="frame" x="0.0" y="90" width="44" height="30"/>
+                            </variation>
+                            <connections>
+                                <action selector="updateAudio:" destination="iN0-l3-epB" eventType="touchUpInside" id="CN5-lA-tqZ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" alpha="0.69999999999999996" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdf-GG-pmW">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=compact" fixedFrame="YES">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                <rect key="frame" x="0.0" y="120" width="44" height="30"/>
+                            </variation>
+                            <connections>
+                                <action selector="updateAudio:" destination="iN0-l3-epB" eventType="touchUpInside" id="fb6-cY-7AD"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" alpha="0.69999999999999996" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKA-2N-ijb">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=compact" fixedFrame="YES">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                <rect key="frame" x="0.0" y="150" width="44" height="30"/>
+                            </variation>
+                            <connections>
+                                <action selector="updateAudio:" destination="iN0-l3-epB" eventType="touchUpInside" id="BkE-4M-EBN"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" alpha="0.69999999999999996" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0b-7u-8VO">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=compact" fixedFrame="YES">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                <rect key="frame" x="0.0" y="180" width="44" height="30"/>
+                            </variation>
+                            <connections>
+                                <action selector="updateAudio:" destination="iN0-l3-epB" eventType="touchUpInside" id="Crb-Lb-EOy"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" alpha="0.69999999999999996" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6y-Wu-zvn">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=compact" fixedFrame="YES">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                <rect key="frame" x="0.0" y="210" width="44" height="30"/>
+                            </variation>
+                            <connections>
+                                <action selector="updateAudio:" destination="iN0-l3-epB" eventType="touchUpInside" id="nt2-eX-3VW"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" alpha="0.69999999999999996" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVA-cI-dXl">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=compact" fixedFrame="YES">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                <rect key="frame" x="0.0" y="240" width="44" height="30"/>
+                            </variation>
+                            <connections>
+                                <action selector="updateAudio:" destination="iN0-l3-epB" eventType="touchUpInside" id="sGz-nJ-3OH"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" alpha="0.69999999999999996" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66Y-8l-wCQ">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=compact" fixedFrame="YES">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                <rect key="frame" x="0.0" y="270" width="44" height="30"/>
+                            </variation>
+                            <connections>
+                                <action selector="updateAudio:" destination="iN0-l3-epB" eventType="touchUpInside" id="ebZ-xU-SjM"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="spn-WZ-hMf"/>
+                            <exclude reference="Kzo-XQ-rcY"/>
+                            <exclude reference="T03-ti-Jrd"/>
+                            <exclude reference="nfa-gP-3SU"/>
+                            <exclude reference="cdf-GG-pmW"/>
+                            <exclude reference="kKA-2N-ijb"/>
+                            <exclude reference="P0b-7u-8VO"/>
+                            <exclude reference="y6y-Wu-zvn"/>
+                            <exclude reference="xVA-cI-dXl"/>
+                            <exclude reference="66Y-8l-wCQ"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=compact" misplaced="YES">
+                        <rect key="frame" x="131" y="71" width="5" height="9"/>
+                        <mask key="subviews">
+                            <include reference="spn-WZ-hMf"/>
+                            <include reference="Kzo-XQ-rcY"/>
+                            <include reference="T03-ti-Jrd"/>
+                            <include reference="nfa-gP-3SU"/>
+                            <include reference="cdf-GG-pmW"/>
+                            <include reference="kKA-2N-ijb"/>
+                            <include reference="P0b-7u-8VO"/>
+                            <include reference="y6y-Wu-zvn"/>
+                            <include reference="xVA-cI-dXl"/>
+                            <include reference="66Y-8l-wCQ"/>
+                        </mask>
+                    </variation>
+                </view>
+                <view opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Haq-Uz-sMM">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5M-br-vid">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=compact" fixedFrame="YES">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                <rect key="frame" x="0.0" y="0.0" width="44" height="30"/>
+                            </variation>
+                            <connections>
+                                <action selector="updateCC:" destination="iN0-l3-epB" eventType="touchUpInside" id="KI7-gq-GlY"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" alpha="0.69999999999999996" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4U-Kl-DTq">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=compact" fixedFrame="YES">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                <rect key="frame" x="0.0" y="30" width="44" height="30"/>
+                            </variation>
+                            <connections>
+                                <action selector="updateCC:" destination="iN0-l3-epB" eventType="touchUpInside" id="De1-iT-YoZ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" alpha="0.69999999999999996" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iB-RU-z3n">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=compact" fixedFrame="YES">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                <rect key="frame" x="0.0" y="60" width="44" height="30"/>
+                            </variation>
+                            <connections>
+                                <action selector="updateCC:" destination="iN0-l3-epB" eventType="touchUpInside" id="Sbb-l3-RMU"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" alpha="0.69999999999999996" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQF-dD-hoH">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=compact" fixedFrame="YES">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                <rect key="frame" x="0.0" y="90" width="44" height="30"/>
+                            </variation>
+                            <connections>
+                                <action selector="updateCC:" destination="iN0-l3-epB" eventType="touchUpInside" id="lXN-nx-ZE2"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" alpha="0.69999999999999996" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8e-J5-1r9">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=compact" fixedFrame="YES">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                <rect key="frame" x="0.0" y="120" width="44" height="30"/>
+                            </variation>
+                            <connections>
+                                <action selector="updateCC:" destination="iN0-l3-epB" eventType="touchUpInside" id="551-ZD-jbf"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" alpha="0.69999999999999996" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Xs-uo-tfV">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=compact" fixedFrame="YES">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                <rect key="frame" x="0.0" y="150" width="44" height="30"/>
+                            </variation>
+                            <connections>
+                                <action selector="updateCC:" destination="iN0-l3-epB" eventType="touchUpInside" id="Eu2-bt-oGJ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" alpha="0.69999999999999996" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ld-QD-GIc">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=compact" fixedFrame="YES">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                <rect key="frame" x="0.0" y="180" width="44" height="30"/>
+                            </variation>
+                            <connections>
+                                <action selector="updateCC:" destination="iN0-l3-epB" eventType="touchUpInside" id="V5i-fg-Snd"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" alpha="0.69999999999999996" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTi-Ik-cmc">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=compact" fixedFrame="YES">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                <rect key="frame" x="0.0" y="210" width="44" height="30"/>
+                            </variation>
+                            <connections>
+                                <action selector="updateCC:" destination="iN0-l3-epB" eventType="touchUpInside" id="NRb-Xz-4FK"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" alpha="0.69999999999999996" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WxZ-b3-6lX">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=compact" fixedFrame="YES">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                <rect key="frame" x="0.0" y="240" width="44" height="30"/>
+                            </variation>
+                            <connections>
+                                <action selector="updateCC:" destination="iN0-l3-epB" eventType="touchUpInside" id="UNj-09-k5j"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" alpha="0.69999999999999996" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vC-Fc-KCr">
+                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <state key="normal">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <variation key="heightClass=compact" fixedFrame="YES">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                <rect key="frame" x="0.0" y="270" width="44" height="30"/>
+                            </variation>
+                            <connections>
+                                <action selector="updateCC:" destination="iN0-l3-epB" eventType="touchUpInside" id="NAi-kX-YZe"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="O5M-br-vid"/>
+                            <exclude reference="Z4U-Kl-DTq"/>
+                            <exclude reference="3iB-RU-z3n"/>
+                            <exclude reference="KQF-dD-hoH"/>
+                            <exclude reference="N8e-J5-1r9"/>
+                            <exclude reference="9Xs-uo-tfV"/>
+                            <exclude reference="6ld-QD-GIc"/>
+                            <exclude reference="ZTi-Ik-cmc"/>
+                            <exclude reference="WxZ-b3-6lX"/>
+                            <exclude reference="1vC-Fc-KCr"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=compact" misplaced="YES">
+                        <rect key="frame" x="8" y="122" width="300" height="30"/>
+                        <mask key="subviews">
+                            <include reference="O5M-br-vid"/>
+                            <include reference="Z4U-Kl-DTq"/>
+                            <include reference="3iB-RU-z3n"/>
+                            <include reference="KQF-dD-hoH"/>
+                            <include reference="N8e-J5-1r9"/>
+                            <include reference="9Xs-uo-tfV"/>
+                            <include reference="6ld-QD-GIc"/>
+                            <include reference="ZTi-Ik-cmc"/>
+                            <include reference="WxZ-b3-6lX"/>
+                            <include reference="1vC-Fc-KCr"/>
+                        </mask>
+                    </variation>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.44419481485236412" green="0.45364774247800954" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="ZmC-Ov-Cgi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CFj-uz-ARq"/>
+                <constraint firstItem="j8N-lV-Fo2" firstAttribute="leading" secondItem="Haq-Uz-sMM" secondAttribute="trailing" constant="3" id="Few-d6-dkD"/>
                 <constraint firstAttribute="trailing" secondItem="ZmC-Ov-Cgi" secondAttribute="trailing" id="GJF-S7-Hyn"/>
                 <constraint firstAttribute="bottom" secondItem="ZmC-Ov-Cgi" secondAttribute="bottom" id="xFt-Cx-T8V"/>
             </constraints>
             <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="j8N-lV-Fo2"/>
+                    <exclude reference="Haq-Uz-sMM"/>
+                </mask>
                 <mask key="constraints">
+                    <exclude reference="Few-d6-dkD"/>
                     <exclude reference="CFj-uz-ARq"/>
                     <exclude reference="GJF-S7-Hyn"/>
                     <exclude reference="xFt-Cx-T8V"/>
                 </mask>
             </variation>
             <variation key="heightClass=compact">
+                <mask key="subviews">
+                    <include reference="j8N-lV-Fo2"/>
+                    <include reference="Haq-Uz-sMM"/>
+                </mask>
                 <mask key="constraints">
+                    <include reference="Few-d6-dkD"/>
                     <include reference="CFj-uz-ARq"/>
                     <include reference="GJF-S7-Hyn"/>
                     <include reference="xFt-Cx-T8V"/>
@@ -254,6 +669,10 @@
                 </mask>
             </variation>
             <connections>
+                <outlet property="Audio" destination="1XN-Pk-cCy" id="7FE-2G-Gp4"/>
+                <outlet property="AudioSelection" destination="j8N-lV-Fo2" id="ceF-cf-8A1"/>
+                <outlet property="CC" destination="TlK-GN-GR0" id="eMF-51-YyP"/>
+                <outlet property="CCSelection" destination="Haq-Uz-sMM" id="7gc-aC-WtI"/>
                 <outlet property="playBackTime" destination="pxd-zR-p0h" id="oeQ-uI-YBJ"/>
                 <outlet property="playBackTotalTime" destination="Bcq-Nn-evs" id="t5S-au-7gE"/>
                 <outlet property="playPauseButton" destination="CKu-6r-aG3" id="CfC-hV-urX"/>

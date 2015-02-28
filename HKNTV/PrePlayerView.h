@@ -19,7 +19,7 @@
 
 @end
 
-@interface PrePlayerView : UIView
+@interface PrePlayerView : UIView <UIPopoverControllerDelegate>
 
 @property (weak, nonatomic) id <prePlayerViewDelegate> delegate;
 
@@ -44,8 +44,20 @@
 @property (retain,nonatomic) UIView *playerHudCenter;
 @property (strong,nonatomic) IBOutlet UIView *playerHudBottom;
 
+@property(retain, nonatomic) NSArray *filtered;
+@property(retain, nonatomic) AVMediaSelectionGroup * subtitles;
+@property(retain, nonatomic) AVMediaSelectionGroup * audioTracks;
+
+@property(retain, nonatomic) IBOutlet UIView *CCSelection;
+@property(retain, nonatomic) IBOutlet UIView *AudioSelection;
+@property(retain, nonatomic)IBOutlet UIButton *CC;
+@property(retain, nonatomic)IBOutlet UIButton *Audio;
+
+
+
 
 -(void)initConfigrationWithFrame:(CGRect)frame ContentURL:(NSURL*)contentURL;
+-(void)initMediaOptionButtons;
 
 //- (id)initWithFrame:(CGRect)frame contentURL:(NSURL*)contentURL;
 
